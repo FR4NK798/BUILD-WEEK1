@@ -12,7 +12,7 @@ const questions = [
     type: "multiple",
     difficulty: "easy",
     question:
-      "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn&#039;t get modified?",
+      "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn't get modified?",
     correct_answer: "Final",
     incorrect_answers: ["Static", "Private", "Public"],
   },
@@ -89,19 +89,15 @@ const funzioneTitle = (a) => {
   for (let i = 0; i < questions.length; i++) {
     domande.push(questions[i].question);
   }
-
-  const numeroRandom = Math.floor(Math.random() * 10);
-
+  
   const divTitle = document.createElement("div");
+  divTitle.innerText = domande[0];
   divTitle.classList.add("title");
-
-  divTitle.innerText = domande[numeroRandom];
   containerDomande.appendChild(divTitle);
-  return domande;
 };
 
 console.log(domande);
 
-funzioneTitle(questions);
-
-window.onload = function () {};
+window.onload = function () {
+  funzioneTitle();
+};
