@@ -85,25 +85,35 @@ const questions = [
 const domande = [];
 const containerDomande = document.querySelector(".container2");
 
+for (let i = 0; i < questions.length; i++) {
+  domande.push(questions[i].question);}
+
 const funzioneTitle = (a) => {
-  for (let i = 0; i < questions.length; i++) {
-    domande.push(questions[i].question);
-  }
-  const numeroRandom = Math.floor(Math.random() * 10);
-  const divTitle = document.createElement("div");
-  divTitle.innerText = domande[0];
-  divTitle.classList.add("title");
-  divTitle.innerText = domande[numeroRandom];
-  containerDomande.appendChild(divTitle);
+    const divTitle = document.createElement("div");
+    divTitle.classList.add("title");
+    containerDomande.appendChild(divTitle);
+    const randIndex = Math.floor(Math.random()* domande.length);
+    const random = domande.splice(randIndex, 1)[0];
+    divTitle.innerText = domande[random];
+    return domande
+
+  
 };
 
+
+const domandaRandom = () => {
+}
+
+funzioneTitle(domande);
 console.log(domande);
 
-const containerDomande = document.querySelector(".answers");
+domandaRandom();
+
+/* const containerDomande = document.querySelector(".answers");
 const buttonDomanda = document.createElement("button");
 containerDomande.appendChild(buttonDomanda);
-
-buttonDomanda.addEventListener("click");
+ */
+// buttonDomanda.addEventListener("click");
 
 window.onload = function () {
   funzioneTitle(questions);

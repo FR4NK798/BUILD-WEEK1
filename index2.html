@@ -38,6 +38,7 @@
     <button onclick="nextQuestion()">Next Question</button>
   </div>
 
+  
   <div class="question" id="question2" style="display: none;">
     <h2>Question 2: Which programming language is often used for web development?</h2>
     <div class="options">
@@ -47,7 +48,15 @@
     </div>
     <button onclick="submitQuiz()">Submit Quiz</button>
   </div>
-
+  <div class="question" id="question2" style="display: none;">
+    <h2>Question 2: Which programming language is often used for web development?</h2>
+    <div class="options">
+      <label><input type="radio" name="q2" value="a">a) Java</label>
+      <label><input type="radio" name="q2" value="b">b) Python</label>
+      <label><input type="radio" name="q2" value="c">c) JavaScript</label>
+    </div>
+    <button onclick="submitQuiz()">Submit Quiz</button>
+  </div>
   <!-- Add more questions as needed -->
 
   <div id="result"></div>
@@ -55,7 +64,7 @@
 
 <script>
   let currentQuestion = 1;
-  const totalQuestions = 2; // Update with the total number of questions
+  const totalQuestions = 10; // Update with the total number of questions
 
   function nextQuestion() {
     const currentQuestionDiv = document.getElementById(`question${currentQuestion}`);
