@@ -4,31 +4,67 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BUILD WEEK1</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
-    <div>
+    <header>
       <img src="./assets/epicode_logo.png" alt="logo epicode" />
       <!-- logo epicode -->
-    </div>
-    <h1>Welcome to <span>your exam</span></h1>
+    </header>
+    <main>
+      <div class="title">Welcome to <span>your exam</span></div>
 
-    <div>
-      <h2>Instructions</h2>
-      <p>
-        We don't espect most engineers to know the answers to all of these questions, so don't worry if you're unsure of
-        a few of them.
-      </p>
-    </div>
+      <div class="instruction">
+        <h2>Instructions</h2>
+        <p>
+          We don't espect most engineers to know the answers to all of these questions, so don't worry if you're unsure
+          of a few of them.
+        </p>
+      </div>
 
-    <div>
-      <ul>
-        <li>Each question is <span>timed</span> and can only be <span>answered once.</span></li>
-        <li>Changing browser tab or opening other windows will <span>invalidate the question.</span></li>
-        <li>This exam will take approx. <span>0-5 minutes.</span></li>
-      </ul>
-    </div>
+      <div>
+        <ul>
+          <li>Each question is <span>timed</span> and can only be <span>answered once.</span></li>
+          <li>Changing browser tab or opening other windows will <span>invalidate the question.</span></li>
+          <li>This exam will take approx. <span>0-5 minutes.</span></li>
+        </ul>
+      </div>
 
-    <div><span>I promise to answer myself without help from anyone</span> <button>PROCEED</button></div>
-    <script src="./index.JS"></script>
+      <div>
+        <div class="checkbox">
+          <label class="container">
+            <!-- CHECKBOX-->
+            <input type="checkbox" checked="checked" />
+            <!-- CHECKBOX-->
+            <div class="checkmark"></div>
+            <!-- CHECKBOX-->
+          </label>
+          <!-- CHECKBOX-->
+        </div>
+        <span>I promise to answer myself without help from anyone</span>
+        <div class="button">
+          <!-- DIV BOTTON-->
+          <button class="btn">
+            <!-- BOTTON-->
+            <svg
+              height="24"
+              width="24"
+              fill="#FFFFFF"
+              viewBox="0 0 24 24"
+              data-name="Layer 1"
+              id="Layer_1"
+              class="sparkle"
+            >
+              <path
+                d="M10,21.236,6.755,14.745.264,11.5,6.755,8.255,10,1.764l3.245,6.491L19.736,11.5l-6.491,3.245ZM18,21l1.5,3L21,21l3-1.5L21,18l-1.5-3L18,18l-3,1.5ZM19.333,4.667,20.5,7l1.167-2.333L24,3.5,21.667,2.333,20.5,0,19.333,2.333,17,3.5Z"
+              ></path>
+            </svg>
+
+            <span class="text">Generate</span>
+          </button>
+          <!-- BOTTON-->
+        </div>
+      </div>
+    </main>
   </body>
 </html>
