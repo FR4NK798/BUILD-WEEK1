@@ -89,15 +89,22 @@ const funzioneTitle = (a) => {
   for (let i = 0; i < questions.length; i++) {
     domande.push(questions[i].question);
   }
-  
+  const numeroRandom = Math.floor(Math.random() * 10);
   const divTitle = document.createElement("div");
   divTitle.innerText = domande[0];
   divTitle.classList.add("title");
+  divTitle.innerText = domande[numeroRandom];
   containerDomande.appendChild(divTitle);
 };
 
 console.log(domande);
 
+const containerDomande = document.querySelector(".answers");
+const buttonDomanda = document.createElement("button");
+containerDomande.appendChild(buttonDomanda);
+
+buttonDomanda.addEventListener("click");
+
 window.onload = function () {
-  funzioneTitle();
+  funzioneTitle(questions);
 };
