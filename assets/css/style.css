@@ -308,3 +308,39 @@ ul{
 .btn2:hover .text {
   color: white;
 }
+
+/* PAGINA REVIEW */
+
+.review{
+  text-align: center;
+  margin-inline: auto;
+  width: 38rem;
+}
+
+.paragReview{
+  font-size: 1.5rem;
+}
+
+.txRv{
+  margin-block-start: 7rem;
+  font-weight: 600;
+  margin-block-end: 2rem;
+}
+
+
+
+/* PROVA BOTTONE STELLA */
+
+.rating {
+  font-size: 2.7rem;
+    display: inline;
+}
+
+.rating__star {
+  cursor: pointer;
+  color: #00ffff;
+}
+/* feedback */
+.feed{
+  font-size: 1.4rem;
+}
