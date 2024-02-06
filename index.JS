@@ -120,10 +120,12 @@ const generateRandNumber = function (range) {
 };
 
 const questionNumber = function () {
-  const divNumber = document.querySelector(".questionNumber");
-  const divPosition = container.appendChild(divNumber);
-  counter++;
-  divNumber.innerText = counter;
+  if (counter < 11) {
+    const divNumber = document.querySelector(".questionNumber");
+    const divPosition = container.appendChild(divNumber);
+    counter++;
+    divNumber.innerText = counter;
+  }
 };
 
 const changeNumber = function () {
