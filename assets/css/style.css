@@ -200,16 +200,13 @@ ul{
     
     font-size: medium;
   }
-  
-  .btn:hover {       /*ORIGINALE mod*/
-     background-color: #00FFFF;   /* MODIFICA COLORE HOVER */
+  /* MODIFICARE DA QUA */
+  /* .btn:hover { 
+     background-color: #00FFFF;
      box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.4),
-    /* inset 0px -4px 0px 0px rgba(0, 0, 0, 0.2), */
-    /* 0px 0px 0px 4px rgba(255, 255, 255, 0.2), */
-     0px 0px 180px 0px #00FFFF;/*MODIFICA COLORE HOVER */
-    /* transform: translateY(-2px); */
-  }
-
+     0px 0px 180px 0px #00FFFF;
+  } */
+/* MODIFICA HOVER MOUSE SOPRA */
 
 
   /* .btn:hover {       ORIGINALE
@@ -220,15 +217,37 @@ ul{
     0px 0px 180px 0px #9917FF;
     transform: translateY(-2px);
   } */
-  
-  .btn:hover .text {
+  /* ANIMAZIONE PASSA SOPRA IL MOUSE */
+  /* .btn:hover .text {
     color: black;
   }
   
   .btn:hover .sparkle {
     fill: black;
     transform: scale(1.2);
+  }  */
+
+  /* PROVA A INSERIRE MODIFICHE */
+
+
+  .btn.active {
+    background: linear-gradient(0deg,#A47CF3,#683FEA);
+    box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.4),
+    inset 0px -4px 0px 0px rgba(0, 0, 0, 0.2),
+    0px 0px 0px 4px rgba(255, 255, 255, 0.2),
+    0px 0px 180px 0px #9917FF;
+    transform: translateY(-2px);
+  }
+  
+  .btn.active .text {
+    color: white;
+  }
+  
+  .btn.active .sparkle {
+    fill: white;
+    transform: scale(1.2);
   } 
+
 
   /* CONTAINER 2 - FA APPARIRE LE DOMANDE */
 
