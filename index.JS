@@ -12,7 +12,7 @@ const questions = [
     type: "multiple",
     difficulty: "easy",
     question:
-      "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn&#039;t get modified?",
+      "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn't get modified?",
     correct_answer: "Final",
     incorrect_answers: ["Static", "Private", "Public"],
   },
@@ -82,29 +82,62 @@ const questions = [
   },
 ];
 
-const domande = [];
-const containerDomande = document.querySelector(".container2");
+const container = document.querySelector(".container2");
 
-const funzioneTitle = (a) => {
+const fillArray = function () {
+  const arr = [];
   for (let i = 0; i < questions.length; i++) {
-    domande.push(questions[i].question);
+    arr.push(questions[i].question);
   }
-  const numeroRandom = Math.floor(Math.random() * 10);
-  const divTitle = document.createElement("div");
-  divTitle.classList.add("title");
-  divTitle.innerText = domande[numeroRandom];
-  containerDomande.appendChild(divTitle);
-  return domande;
+  return arr;
 };
 
-console.log(domande);
+const getRandomNum = function (range) {
+  // riceve come parametro un'altra funzione, che è quella che riempie il nostro array di domande
+  const randIndex = Math.floor(Math.random() * range.length);
+  const random = range.splice(randIndex, 1)[0];
+  return random;
+};
 
-const containerDomande = document.querySelector(".answers");
-const buttonDomanda = document.createElement("button");
-containerDomande.appendChild(buttonDomanda);
+const generateRandNumber = function (range) {
+  const random = getRandomNum(range);
 
-buttonDomanda.addEventListener("click");
+  const questionDiv = document.createElement("div");
+  container.appendChild(questionDiv);
+  questionDiv.innerText = random;
+  questionDiv.classList.add("title");
+};
+
+const arrayRisposte = [];
+
+const funRisposte = () => {
+  for (let i = 0; i < questions.length; i++) {
+    arrayRisposte.push(questions[i].correct_answer);
+    arrayRisposte.push(questions[i].incorrect_answer);
+  }
+  return funRisposte;
+};
+
+const divRisposte = () => {
+  const risposteDiv = document.createElement("div");
+  container.appendChild(questionDiv);
+  questionDiv.classList.add("answers");
+};
 
 window.onload = function () {
-  funzioneTitle(questions);
+  const randBtn = document.getElementById("randBtn");
+  const range = fillArray();
+  generateRandNumber(range);
+  randBtn.addEventListener("click", deleteTask);
 };
+
+function deleteTask(e) {
+  const container = e.currentTarget.parentElement;
+  const title = document.querySelector(".title");
+  container.removeChild(title);
+  const range = fillArray();
+  generateRandNumber(range);
+}
+
+// 1) FUNZIONE CHE RIEMPIE con solo una domanda (partire dal submit dell'homepage AL LOAD)
+// 2) FUNZIONE CHE SVUOTA e RICHIAMA la prima funzione (nellì'addevent listener)
