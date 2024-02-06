@@ -82,39 +82,54 @@ const questions = [
   },
 ];
 
-const domande = [];
-const containerDomande = document.querySelector(".container2");
+/* 
+const generateQuestionDiv = function () {
+  const questionDiv = document.createElement("div");
+  const container = document.querySelector(".container2");
+  container.appendChild(questionDiv);
 
-for (let i = 0; i < questions.length; i++) {
-  domande.push(questions[i].question);}
+}; */
 
-const funzioneTitle = (a) => {
-    const divTitle = document.createElement("div");
-    divTitle.classList.add("title");
-    containerDomande.appendChild(divTitle);
-    const randIndex = Math.floor(Math.random()* domande.length);
-    const random = domande.splice(randIndex, 1)[0];
-    divTitle.innerText = domande[random];
-    return domande
+const container = document.querySelector(".container2");
 
-  
+const fillArray = function () {
+  const arr = [];
+  for (let i = 0; i < questions.length; i++) {
+    arr.push(questions[i].question);
+  }
+  return arr;
 };
 
+const getRandomNum = function (range) {
+  // riceve come parametro un'altra funzione, che è quella che riempie il nostro array di domande
+  const randIndex = Math.floor(Math.random() * range.length);
+  const random = range.splice(randIndex, 1)[0];
+  return random;
+};
 
-const domandaRandom = () => {
-}
+const generateRandNumber = function (range) {
+  const random = getRandomNum(range);
 
-funzioneTitle(domande);
-console.log(domande);
-
-domandaRandom();
-
-/* const containerDomande = document.querySelector(".answers");
-const buttonDomanda = document.createElement("button");
-containerDomande.appendChild(buttonDomanda);
- */
-// buttonDomanda.addEventListener("click");
+  const questionDiv = document.createElement("div");
+  container.appendChild(questionDiv);
+  questionDiv.innerText = random;
+  questionDiv.classList.add("title");
+};
 
 window.onload = function () {
-  funzioneTitle(questions);
+  const randBtn = document.getElementById("randBtn");
+  const range = fillArray();
+  generateRandNumber(range);
+  randBtn.addEventListener("click", deleteTask);
 };
+
+function deleteTask(e) {
+  const container = e.currentTarget.parentElement;
+  const title = document.querySelector(".title");
+  container.removeChild(title);
+  const range = fillArray();
+  generateRandNumber(range);
+}
+
+// 1) FUNZIONE CHE RIEMPIE con solo una domanda (partire dal submit dell'homepage AL LOAD)
+// 2) FUNZIONE CHE SVUOTA e RICHIAMA la prima funzione (nellì'addevent listener)
