@@ -82,37 +82,27 @@ const questions = [
   },
 ];
 
-/* 
-const generateQuestionDiv = function () {
-  const questionDiv = document.createElement("div");
-  const container = document.querySelector(".container2");
-  container.appendChild(questionDiv);
+const arrObj = [...questions];
+// const domande = questions.question;
+const containerDomandaRisposta = document.querySelector(".container2");
+let questionCounter = 0;
 
-}; */
+const domandeSelezionate = [];
+const domandaRandom = function (arrObj) {
+  const randIndex = Math.floor(Math.random() * arrObj.length);
+  const random = arrObj.splice(randIndex, 1)[0];
 
-const container = document.querySelector(".container2");
-
-const fillArray = function () {
-  const arr = [];
-  for (let i = 0; i < questions.length; i++) {
-    arr.push(questions[i].question);
-  }
-  return arr;
-};
-
-const getRandomNum = function (range) {
-  const randIndex = Math.floor(Math.random() * range.length);
-  const random = range.splice(randIndex, 1)[0];
+  domandeSelezionate.push(random);
   return random;
 };
 let counter = 0;
 
-const generateRandNumber = function (range) {
-  const random = getRandomNum(range);
+const generateDivDomanda = function (arrObj) {
+  const random = domandaRandom(arrObj);
 
   const questionDiv = document.createElement("div");
-  container.appendChild(questionDiv);
-  questionDiv.innerText = random;
+  containerDomandaRisposta.appendChild(questionDiv);
+  questionDiv.innerText = random.question;
   questionDiv.classList.add("title");
   if (counter > 9) {
     location.reload();
@@ -120,40 +110,50 @@ const generateRandNumber = function (range) {
 };
 
 const questionNumber = function () {
+  // if (counter < 11) {
   const divNumber = document.querySelector(".questionNumber");
-  const divPosition = container.appendChild(divNumber);
+  const divPosition = containerDomandaRisposta.appendChild(divNumber);
   counter++;
   divNumber.innerText = counter;
+  // }
 };
 
-const changeNumber = function () {
-  const container = e.currentTarget.parentElement;
+const nextQuestion = function (e) {
+  const containerDomandaRisposta = e.currentTarget.parentElement;
   const title = document.querySelector(".title");
-  container.removeChild(title);
+
+  console.log(containerDomandaRisposta);
+  if (containerDomandaRisposta) {
+    containerDomandaRisposta.removeChild(title);
+  }
 };
 
-const buttonClick = () => {
+const buttonClick = (e) => {
+  // counter++;
   questionNumber();
-  changeNumber();
+  nextQuestion(e);
 };
 window.onload = function () {
   const randBtn = document.getElementById("randBtn");
-  const range = fillArray();
-  generateRandNumber(range);
+
+  generateDivDomanda(arrObj);
   randBtn.addEventListener("click", deleteTask);
   questionNumber();
   randBtn.addEventListener("click", buttonClick);
 };
 
 function deleteTask(e) {
-  const container = e.currentTarget.parentElement;
+  const containerDomandaRisposta = e.currentTarget.parentElement;
   const title = document.querySelector(".title");
-  container.removeChild(title);
-  const range = fillArray();
-  generateRandNumber(range);
+
+  containerDomandaRisposta.removeChild(title);
+
+  generateDivDomanda(arrObj);
 }
 
 // preferenza) Eliminare le ripetizioni del random;
 // 1) Integrare i div delle risposte all'interno della pagina;
 // 2) Sommare + 1 per le risposte giuste, nulla per le risposte sbagliate (reduce);
 // 3) Ciclare per visualizzare la posizione
+// risposte --> un evento click dove la risposta selezionata viene inserita in un array. Poi fare ciclo for per compararle per avere il punteggio.
+// per mostrare le risposte --> mostrare le risposte allegate quando viene mostrata la domanda random.
