@@ -82,14 +82,6 @@ const questions = [
   },
 ];
 
-/* 
-const generateQuestionDiv = function () {
-  const questionDiv = document.createElement("div");
-  const container = document.querySelector(".container2");
-  container.appendChild(questionDiv);
-
-}; */
-
 const container = document.querySelector(".container2");
 
 const fillArray = function () {
@@ -114,6 +106,22 @@ const generateRandNumber = function (range) {
   container.appendChild(questionDiv);
   questionDiv.innerText = random;
   questionDiv.classList.add("title");
+};
+
+const arrayRisposte = [];
+
+const funRisposte = () => {
+  for (let i = 0; i < questions.length; i++) {
+    arrayRisposte.push(questions[i].correct_answer);
+    arrayRisposte.push(questions[i].incorrect_answer);
+  }
+  return funRisposte;
+};
+
+const divRisposte = () => {
+  const risposteDiv = document.createElement("div");
+  container.appendChild(questionDiv);
+  questionDiv.classList.add("answers");
 };
 
 window.onload = function () {
