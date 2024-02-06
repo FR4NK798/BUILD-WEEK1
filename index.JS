@@ -110,12 +110,21 @@ const generateDivDomanda = function (arrObj) {
 };
 
 const questionNumber = function () {
+<<<<<<< HEAD
   // if (counter < 11) {
   const divNumber = document.querySelector(".questionNumber");
   const divPosition = containerDomandaRisposta.appendChild(divNumber);
   counter++;
   divNumber.innerText = counter;
   // }
+=======
+  if (counter < 11) {
+    const divNumber = document.querySelector(".questionNumber");
+    const divPosition = container.appendChild(divNumber);
+    counter++;
+    divNumber.innerText = counter;
+  }
+>>>>>>> 29051a976f8c95d8dbc3fc1604393d7a7394352a
 };
 
 const nextQuestion = function (e) {
