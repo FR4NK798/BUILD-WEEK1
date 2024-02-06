@@ -347,3 +347,17 @@ input{
   font-size: 1.3rem;
   color: white;
 }
+
+/* PAGINA RESULT */
+
+.result{
+  text-align: center;
+  margin-block: 0;
+}
+
+.lastPage{
+  margin-block-start: 3rem;
+}
+
+/* DONUT */
+
