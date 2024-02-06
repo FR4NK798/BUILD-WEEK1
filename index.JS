@@ -101,11 +101,11 @@ const fillArray = function () {
 };
 
 const getRandomNum = function (range) {
-  // riceve come parametro un'altra funzione, che è quella che riempie il nostro array di domande
   const randIndex = Math.floor(Math.random() * range.length);
   const random = range.splice(randIndex, 1)[0];
   return random;
 };
+let counter = 0;
 
 const generateRandNumber = function (range) {
   const random = getRandomNum(range);
@@ -114,13 +114,35 @@ const generateRandNumber = function (range) {
   container.appendChild(questionDiv);
   questionDiv.innerText = random;
   questionDiv.classList.add("title");
+  if (counter > 9) {
+    location.reload();
+  }
 };
 
+const questionNumber = function () {
+  const divNumber = document.querySelector(".questionNumber");
+  const divPosition = container.appendChild(divNumber);
+  counter++;
+  divNumber.innerText = counter;
+};
+
+const changeNumber = function () {
+  const container = e.currentTarget.parentElement;
+  const title = document.querySelector(".title");
+  container.removeChild(title);
+};
+
+const buttonClick = () => {
+  questionNumber();
+  changeNumber();
+};
 window.onload = function () {
   const randBtn = document.getElementById("randBtn");
   const range = fillArray();
   generateRandNumber(range);
   randBtn.addEventListener("click", deleteTask);
+  questionNumber();
+  randBtn.addEventListener("click", buttonClick);
 };
 
 function deleteTask(e) {
@@ -131,5 +153,7 @@ function deleteTask(e) {
   generateRandNumber(range);
 }
 
-// 1) FUNZIONE CHE RIEMPIE con solo una domanda (partire dal submit dell'homepage AL LOAD)
-// 2) FUNZIONE CHE SVUOTA e RICHIAMA la prima funzione (nellì'addevent listener)
+// preferenza) Eliminare le ripetizioni del random;
+// 1) Integrare i div delle risposte all'interno della pagina;
+// 2) Sommare + 1 per le risposte giuste, nulla per le risposte sbagliate (reduce);
+// 3) Ciclare per visualizzare la posizione
