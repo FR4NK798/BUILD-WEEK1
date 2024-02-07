@@ -82,9 +82,6 @@ const questions = [
   },
 ];
 
-
-
-
 let counterDomande = 0; //contatore delle domande
 let risposteDate = []; //tiene traccia delle risposte, servirà per quando farete il calcolo dei punteggi
 
@@ -95,8 +92,7 @@ window.onload = () => {
   questions.sort(function (a, b) {
     return a.order - b.order;
   });
-   //ordina le domande secondo l'ordine appena dato
-
+  //ordina le domande secondo l'ordine appena dato
 };
 
 const buttonDomande = document.getElementById("randBtn");
@@ -112,7 +108,6 @@ buttonDomande.addEventListener("click", function getDomanda() {
     handleQuestionsOptions(questions[counterDomande]); //vedi sotto
     counterDomande++;
     DOMCounter.innerText = counterDomande; //aggiorna il contatore a video
-    
   } else {
     buttonDomande["hidden"] = "true"; //nasconde il pulsante una volta che le domande sono finite
     questionBody.innerText = "Finito!";
@@ -165,40 +160,7 @@ function removeImput() {
   });
 }
 
-<<<<<<< HEAD:jsForAll.JS
 //Codici progetto pagina 3
 
 let arrGiuste = [];
 let arrSbagliate = [];
-=======
-
-
-// JAVASCRIPT PER TIMER BENCHMARK 
-
-/* let timerRef;
-function startTimer(){
-
-    const circle = document.getElementsByClassName("circle")[0];
-    const countdownNumberEl = document.getElementById('numberCountdown')
-    console.log(circle);
-    
-    let countdown = 16;
-    let step = 100 / countdown;//passo da fare il colore
-    let n1 = 0;
-    timerRef = setInterval(function () {
-        circle.style.background = conic-gradient(#00ffff ${n1}%,  #886192 ${0}%) border-box;
-        countdownNumberEl.textContent = countdown;
-        
-        countdown = --countdown <= 0 ? 16 : countdown;
-        n1 = n1 + step < 100 ? n1+step : 0 
-    }, 1000);
-}
- 
-startTimer()
-    
-    
-function restartTimer(){
-    clearInterval(timerRef);
-    startTimer()
-} */
->>>>>>> 5ff7161fe5981297bf5db03cac9f97cbdf655d88:benchmark.JS
