@@ -23,12 +23,14 @@
       </div>
       <div class="dispInBlock">
         <div class="percent">
+          <!-- Dove inserire la percentuale -->
           <div class="title">Correct<span>50 %</span></div>
           <p class="paragReview">5/10 questions</p>
         </div>
 
         <div id="container_donut"></div>
         <div class="percent">
+          <!-- Dove inserire la percentuale -->
           <div class="title dispInBlock">Wrong<span>50 %</span></div>
           <p class="paragReview">5/10 questions</p>
         </div>
@@ -65,7 +67,7 @@
       palette.items([{ color: "#00FFFF" }, { color: "#D20094" }]);
 
       anychart.onDocumentReady(function () {
-        // add the data
+        // modificare con il numero delle domande
         let data = anychart.data.set([
           ["giuste", 6],
           ["sbagliate", 2],
