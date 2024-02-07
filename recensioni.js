@@ -19,10 +19,10 @@ function executeRating(stars) {
 }
 executeRating(ratingStars);
 
+
 const moreInfoBtn = document.getElementById("myButton")
 const comment = document.querySelector(".commentInput")
 moreInfoBtn.addEventListener("click", resetInput)
 const resetInput = () => {
   comment.reset();
-}
-
+} 
