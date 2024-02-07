@@ -112,7 +112,7 @@ buttonDomande.addEventListener("click", function getDomanda() {
     questionBody.innerText = "Finito!";
     removeImput();
     DOMCounter.innerText = "";
-    let sommaRisposteDate = risposteDate.reduce((accumulator, currentValue) => {
+    let sommaRisposteCorrette = risposteDate.reduce((accumulator, currentValue) => {
       return parseInt(accumulator) + parseInt(currentValue);
     });
   }
