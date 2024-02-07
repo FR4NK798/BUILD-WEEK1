@@ -82,87 +82,73 @@ const questions = [
   },
 ];
 
-const arrObj = [...questions];
-// const domande = questions.question;
-const containerDomandaRisposta = document.querySelector(".container2");
-let questionCounter = 0;
+//Seconda pagina del progetto
 
-const domandeSelezionate = [];
-const domandaRandom = function (arrObj) {
-  const randIndex = Math.floor(Math.random() * arrObj.length);
-  const random = arrObj.splice(randIndex, 1)[0];
+let counterDomande = 0; //contatore delle domande
+let risposteDate = []; //tiene traccia delle risposte, servirà per quando farete il calcolo dei punteggi
 
-  domandeSelezionate.push(random);
-  return random;
+window.onload = () => {
+  questions.forEach((x) => {
+    x.order = Math.random() * questions.length; //aggiunge un campo alle domande per rappresentarne l'ordinamento casuale
+  });
+  questions.sort(function (a, b) {
+    return a.order - b.order;
+  }); //ordina le domande secondo l'ordine appena dato
 };
-let counter = 0;
 
-const generateDivDomanda = function (arrObj) {
-  const random = domandaRandom(arrObj);
+const buttonDomande = document.getElementById("randBtn");
+const questionBody = document.getElementById("questionBody");
+const DOMCounter = document.getElementById("questionNumber");
+const form = document.getElementById("form");
 
-  const questionDiv = document.createElement("div");
-  containerDomandaRisposta.appendChild(questionDiv);
-  questionDiv.innerText = random.question;
-  questionDiv.classList.add("title");
-  if (counter > 9) {
-    location.reload();
+buttonDomande.addEventListener("click", function getDomanda() {
+  buttonDomande["disabled"] = "true"; //disabilita il pulsante per andare alla domanda successiva se non si ha selezionato una risposta
+  if (counterDomande < 10) {
+    questionBody.innerText = questions[counterDomande].question; //inserisce il testo della domanda nel div
+    removeImput(); //vedi sotto
+    handleQuestionsOptions(questions[counterDomande]); //vedi sotto
+    counterDomande++;
+    DOMCounter.innerText = counterDomande; //aggiorna il contatore a video
+  } else {
+    buttonDomande["hidden"] = "true"; //nasconde il pulsante una volta che le domande sono finite
+    questionBody.innerText = "Finito!"; //fare diventare un pulsante per mandare alla pagina successiva
+    removeImput();
+    DOMCounter.innerText = "";
   }
-};
+});
 
-const questionNumber = function () {
-<<<<<<< HEAD
-  // if (counter < 11) {
-  const divNumber = document.querySelector(".questionNumber");
-  const divPosition = containerDomandaRisposta.appendChild(divNumber);
-  counter++;
-  divNumber.innerText = counter;
-  // }
-=======
-  if (counter < 11) {
-    const divNumber = document.querySelector(".questionNumber");
-    const divPosition = container.appendChild(divNumber);
-    counter++;
-    divNumber.innerText = counter;
+function handleQuestionsOptions(e) {
+  //gestisce il comportamento delle domande, aggiungendo imput e label in base a quante risposte ci sono
+  for (let i = 0; i < e.incorrect_answers.length + 1; i++) {
+    let input = document.createElement("input"); // per renderli bottoni cliccabili modificare input con button
+    let label = document.createElement("label"); // togliere se si modifica input
+    input.type = "radio"; //assegno il tipo di imput - Diventerà button.innerText
+    input.addEventListener("change", function (event) {
+      buttonDomande.removeAttribute("disabled");
+      risposteDate.push(event.target.value);
+    }); //assegno all'imput listener per aggiungere all'array di risposte quella selezionata
+    if (i < e.incorrect_answers.length) {
+      input.value = 0; //le domande errate avrano valore 0
+      label.innerText = e.incorrect_answers[i];
+    } else {
+      input.value = 1; //le domande corrette avranno valore 1
+      label.innerText = e.correct_answer;
+    }
+    form.appendChild(label);
+    form.appendChild(input);
   }
->>>>>>> 29051a976f8c95d8dbc3fc1604393d7a7394352a
-};
-
-const nextQuestion = function (e) {
-  const containerDomandaRisposta = e.currentTarget.parentElement;
-  const title = document.querySelector(".title");
-
-  console.log(containerDomandaRisposta);
-  if (containerDomandaRisposta) {
-    containerDomandaRisposta.removeChild(title);
-  }
-};
-
-const buttonClick = (e) => {
-  // counter++;
-  questionNumber();
-  nextQuestion(e);
-};
-window.onload = function () {
-  const randBtn = document.getElementById("randBtn");
-
-  generateDivDomanda(arrObj);
-  randBtn.addEventListener("click", deleteTask);
-  questionNumber();
-  randBtn.addEventListener("click", buttonClick);
-};
-
-function deleteTask(e) {
-  const containerDomandaRisposta = e.currentTarget.parentElement;
-  const title = document.querySelector(".title");
-
-  containerDomandaRisposta.removeChild(title);
-
-  generateDivDomanda(arrObj);
 }
 
-// preferenza) Eliminare le ripetizioni del random;
-// 1) Integrare i div delle risposte all'interno della pagina;
-// 2) Sommare + 1 per le risposte giuste, nulla per le risposte sbagliate (reduce);
-// 3) Ciclare per visualizzare la posizione
-// risposte --> un evento click dove la risposta selezionata viene inserita in un array. Poi fare ciclo for per compararle per avere il punteggio.
-// per mostrare le risposte --> mostrare le risposte allegate quando viene mostrata la domanda random.
+function removeImput() {
+  //gestisce la rimozione degli imput e dei label relativi al cambio di domanda
+  const inputs = document.querySelectorAll("input"); //se si modificano i button, selezionare i button
+  const labels = document.querySelectorAll("label");
+  inputs.forEach(function (input) {
+    input.parentNode.removeChild(input);
+  });
+  labels.forEach(function (label) {
+    label.parentNode.removeChild(label);
+  });
+}
+
+// Terza pagina del Progetto
