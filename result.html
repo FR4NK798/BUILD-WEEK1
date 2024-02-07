@@ -4,10 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <!-- <link rel="stylesheet" href="./assets/css/style.css" /> -->
     <link rel="stylesheet" href="./assets/css/style.css" />
+<<<<<<< HEAD
+
     <script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-core.min.js"></script>
     <script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-pie.min.js"></script>
+=======
+>>>>>>> 5ff7161fe5981297bf5db03cac9f97cbdf655d88
   </head>
 
   <body>
@@ -24,20 +27,22 @@
       <div class="dispInBlock">
         <div class="percent">
           <!-- Dove inserire la percentuale -->
-          <div class="title">Correct<span>50 %</span></div>
-          <p class="paragReview">5/10 questions</p>
+          <div class="title">Correct<span id="giuste"> </span></div>
+          <p class="paragReview"></p>
         </div>
 
         <div id="container_donut"></div>
         <div class="percent">
           <!-- Dove inserire la percentuale -->
-          <div class="title dispInBlock">Wrong<span>50 %</span></div>
-          <p class="paragReview">5/10 questions</p>
+          <div class="title dispInBlock">Wrong<span id="sbagliate"></span></div>
+          <p class="paragReview"></p>
         </div>
       </div>
     </main>
+    <div class="donut-chart percentage-25"></div>
 
     <script>
+      let parametro = new URLSearchParams(window.location.search).get("risultato");
       // create a standalone label
       let label = anychart.standalones.label();
 
@@ -69,12 +74,12 @@
       anychart.onDocumentReady(function () {
         // modificare con il numero delle domande
         let data = anychart.data.set([
-          ["giuste", 6],
-          ["sbagliate", 2],
+          ["giuste", parametro * 10],
+          ["sbagliate", (10 - parametro) * 10],
         ]);
-        console.log(data);
+
         // create a pie chart instance with the passed data
-        var chart = anychart
+        let chart = anychart
           .pie(data)
           // set the inner radius to make a donut chart
           .innerRadius("65%")
@@ -90,7 +95,7 @@
         // chart.labels().format("{%x}: {%y}").fontSize(14);
         chart.center().content(label);
 
-        var background = chart.background();
+        let background = chart.background();
         background.fill({
           // set colors position
           keys: ["#ffffff00"],
@@ -99,6 +104,17 @@
         });
         // chart.tooltip().format("Percent of total wins: {%PercentValue}%");
       });
+
+      let dataCorrette = {
+        giuste: parametro * 10,
+        sbagliate: (10 - parametro) * 10,
+      };
+
+      const percentuale = document.getElementById("giuste");
+      percentuale.innerText = dataCorrette.giuste + "%";
+      document.getElementById("sbagliate").innerText = dataCorrette.sbagliate + "%";
     </script>
+
+    <script src="./jsForAll.JS"></script>
   </body>
 </html>
