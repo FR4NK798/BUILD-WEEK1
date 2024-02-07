@@ -5,6 +5,7 @@
 
 * {
   box-sizing: border-box;
+  vertical-align: middle;
 }
 
 body {
@@ -395,4 +396,38 @@ input {
   font-size: 40px;
   font-weight: 300;
   font-family: "Outfit", sans-serif;
+}
+
+.rateBtnContainer {
+  width: 20rem;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.rateBtn {
+  border: 2px solid white;
+  background-color: transparent;
+  position: center;
+  height: 4.5rem;
+  width: 15rem;
+  box-shadow: 0px 0px 20px 0px rgba(16, 123, 237, 0.961);
+  margin-top: -2em;
+  margin-bottom: 10em;
+}
+
+.rateBtn a {
+  text-decoration: none;
+  color: white;
+  font-size: 25px;
+  font-weight: 600;
+  font-family: "Outfit", sans-serif;
+}
+
+.dispInBlock {
+  text-align: center;
+}
+
+#giusteNum,
+#sbagliateNum {
+  font-size: 25px;
 }
