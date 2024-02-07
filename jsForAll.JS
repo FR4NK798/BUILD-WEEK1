@@ -112,9 +112,15 @@ buttonDomande.addEventListener("click", function getDomanda() {
     questionBody.innerText = "Finito!";
     removeImput();
     DOMCounter.innerText = "";
-    let sommaRisposteCorrette = risposteDate.reduce((accumulator, currentValue) => {
+    const sommaRisposteCorrette = risposteDate.reduce((accumulator, currentValue) => {
       return parseInt(accumulator) + parseInt(currentValue);
     });
+    arrGiuste.push(sommaRisposteCorrette * 10);
+    arrSbagliate.push((10 - sommaRisposteCorrette) * 10);
+    let linkA = document.createElement("a");
+    linkA.href = "result.HTML?risultato=" + sommaRisposteCorrette;
+    linkA.innerText = "Vai al risultato";
+    document.getElementById("link").appendChild(linkA);
   }
 });
 
@@ -152,3 +158,8 @@ function removeImput() {
     label.parentNode.removeChild(label);
   });
 }
+
+//Codici progetto pagina 3
+
+let arrGiuste = [];
+let arrSbagliate = [];
