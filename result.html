@@ -42,7 +42,7 @@
     </main>
     <div class="donut-chart percentage-25"></div>
     <div class="rateBtnContainer">
-      <button type="button" class="rateBtn"><a href="./recensioni.html">RATE US</a></button>
+      <button type="button" class="rateBtn"><a id="rateLink">RATE US</a></button>
     </div>
 
     <script>
@@ -170,9 +170,17 @@ label.height("100%");
 
     label.width("100%");
     label.height("100%"); */
+
+  document.querySelector(".rateBtn").addEventListener("click", function() {
+  let link = document.getElementById("rateLink");
+  link.href = "./recensioni.html"; 
+  link.click(); 
+})
+
     </script>
 
-    <button type="submit">Rate us!</button>
+  
+
 
     <script src="./jsForAll.JS"></script>
   </body>

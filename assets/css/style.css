@@ -167,8 +167,20 @@ ul {
   cursor: pointer;
   transition: all 450ms ease-in-out;
   font-weight: 600;
-  color: white;
+  color: black;
   font-size: medium;
+}
+
+.btn a {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 25px;
+  font-weight: bold;
+  color: black;
+}
+
+.btn a:visited {
+  color: black;
 }
 
 .sparkle {
@@ -205,9 +217,8 @@ ul {
 /* PROVA A INSERIRE MODIFICHE */
 
 .btn.active {
-  background: linear-gradient(0deg, #a47cf3, #683fea);
-  box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.4), inset 0px -4px 0px 0px rgba(0, 0, 0, 0.2),
-    0px 0px 0px 4px rgba(255, 255, 255, 0.2), 0px 0px 180px 0px #9917ff;
+  background-color: #00ffff;
+  box-shadow: 0px 0px 20px 0px #00ffff;
   transform: translateY(-2px);
 }
 
@@ -402,6 +413,7 @@ input {
   width: 20rem;
   margin-inline: auto;
   text-align: center;
+  cursor: pointer;
 }
 
 .rateBtn {
@@ -413,6 +425,7 @@ input {
   box-shadow: 0px 0px 20px 0px rgba(16, 123, 237, 0.961);
   margin-top: -2em;
   margin-bottom: 10em;
+  cursor: pointer;
 }
 
 .rateBtn a {
