@@ -361,3 +361,15 @@ margin-block-start: 3rem;
 
 /* DONUT */
 
+#container_donut{
+  width: 500px;
+  height: 500px;
+  display: inline-block;
+
+}
+
+/* PAGINA RESULT */
+
+.percent{
+  display: inline-block;
+}

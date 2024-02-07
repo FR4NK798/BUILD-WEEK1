@@ -21,8 +21,18 @@
         <div class="title txRv result">Result</div>
         <p class="paragReview">The summary of your answers:</p>
       </div>
+      <div class="dispInBlock">
+        <div class="percent">
+          <div class="title">Correct<span>50 %</span></div>
+          <p class="paragReview">5/10 questions</p>
+        </div>
 
-      <div id="container"></div>
+        <div id="container_donut"></div>
+        <div class="percent">
+          <div class="title dispInBlock">Wrong<span>50 %</span></div>
+          <p class="paragReview">5/10 questions</p>
+        </div>
+      </div>
     </main>
 
     <script>
@@ -32,10 +42,10 @@
       label
         .useHtml(true)
         .text(
-          '<span style = "color: black; font-size:18px;">Congratulations!</span>' +
+          '<span style = "color: white; font-size:18px;">Congratulations!</span>' +
             '<br><br><span style = "color: #00FFFF; font-size:18px;">You passed the exam:</span>' +
-            '<br><br><span style = "color: black; font-size:18px;">We`ll sent you the certificate in few minutes.</span>' +
-            '<br><span style = "color: black; font-size:18px;">Check your email (including promotions / spam folder)</span>'
+            '<br><br><span style = "color: white; font-size:18px;">We`ll sent you the certificate in few minutes.</span>' +
+            '<br><span style = "color: white; font-size:18px;">Check your email (including promotions / spam folder)</span>'
         )
         .position("center")
         .anchor("center")
@@ -60,22 +70,31 @@
           ["giuste", 6],
           ["sbagliate", 2],
         ]);
+        console.log(data);
         // create a pie chart instance with the passed data
         var chart = anychart
           .pie(data)
           // set the inner radius to make a donut chart
-          .innerRadius("55%")
+          .innerRadius("65%")
           // set the chart title
           .palette(palette);
         console.log(data);
-        chart.title("ciao");
+        // chart.title("ciao");
         // set the container id for the chart
-        chart.container("container");
+        chart.container("container_donut");
         // draw the resulting chart
         chart.draw();
         chart.legend(false);
         // chart.labels().format("{%x}: {%y}").fontSize(14);
         chart.center().content(label);
+
+        var background = chart.background();
+        background.fill({
+          // set colors position
+          keys: ["#ffffff00"],
+          // set angle of colors drawing
+          angle: -130,
+        });
         // chart.tooltip().format("Percent of total wins: {%PercentValue}%");
       });
     </script>
