@@ -411,7 +411,8 @@ input {
   height: 4.5rem;
   width: 15rem;
   box-shadow: 0px 0px 20px 0px rgba(16, 123, 237, 0.961);
-  margin-top: -80px;
+  margin-top: -2em;
+  margin-bottom: 10em;
 }
 
 .rateBtn a {
@@ -424,4 +425,9 @@ input {
 
 .dispInBlock {
   text-align: center;
+}
+
+#giusteNum,
+#sbagliateNum {
+  font-size: 25px;
 }
