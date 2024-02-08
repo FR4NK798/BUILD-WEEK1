@@ -100,25 +100,26 @@ const questionBody = document.getElementById("questionBody");
 const DOMCounter = document.getElementById("questionNumber");
 const form = document.getElementById("form");
 
-buttonDomande.addEventListener("click", function getDomanda() {
-  buttonDomande["disabled"] = "true"; //disabilita il pulsante per andare alla domanda successiva se non si ha selezionato una risposta
+function showNextQuestion() {
+  buttonDomande.disabled = true;
   let questInnerText = null;
+  osta;
   const viola = document.querySelector("#questionNumber span");
   viola.innerText = "/10";
   console.log("Viola: ", viola);
 
   if (counterDomande < 10) {
-    questionBody.innerText = questions[counterDomande].question; //inserisce il testo della domanda nel div
+    questionBody.innerText = questions[counterDomande].question;
     removeImput(); //vedi sotto
-    handleQuestionsOptions(questions[counterDomande]); //vedi sotto
+    handleQuestionsOptions(questions[counterDomande]);
     counterDomande++;
 
     questInnerText = "QUESTION " + counterDomande;
 
-    DOMCounter.innerText = questInnerText; //aggiorna il contatore a video   ORIGINALE
+    DOMCounter.innerText = questInnerText;
     DOMCounter.appendChild(viola);
   } else {
-    buttonDomande["hidden"] = "true"; //nasconde il pulsante una volta che le domande sono finite
+    buttonDomande.hidden = true;
     questionBody.innerText = "Finito!";
     removeImput();
     DOMCounter.innerText = "";
@@ -132,7 +133,11 @@ buttonDomande.addEventListener("click", function getDomanda() {
     linkA.innerText = "Vai al risultato";
     document.getElementById("link").appendChild(linkA);
   }
-});
+}
+
+showNextQuestion();
+
+buttonDomande.addEventListener("click", showNextQuestion);
 
 function handleQuestionsOptions(e) {
   //gestisce il comportamento delle domande, aggiungendo imput e label in base a quante risposte ci sono
