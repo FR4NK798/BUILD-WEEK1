@@ -94,9 +94,16 @@ ul {
   box-shadow: 2px 2px 0px rgb(183, 183, 183);
 }
 
+#checkboxLabel {
+  /* top: -0.1em; */
+  margin-right: 1em;
+  top: -0.7em;
+}
+
 /* Create a custom checkbox */
 .checkmark {
-  position: relative;
+  /* position: relative; */
+  position: absolute;
   top: 0;
   left: 0;
   height: 1.3em;
@@ -410,21 +417,20 @@ input {
   font-family: "Outfit", sans-serif;
 }
 
-
 /* input type radio */
 
-input[type="radio"]{
+input[type="radio"] {
   width: 50%;
-        height: 45px;
-        border-radius: 3em;
-        border: 2px solid;
-        border-top-color: #b3b3b3;
-        border-left-color: #b3b3b3;
-        border-bottom-color: #5c5c5c61;
-        border-right-color: #5c5c5c61;
-        background-color: #5c5c5c61;
-        -webkit-appearance: none; /*to disable the default appearance of radio button*/
-        -moz-appearance: none;
+  height: 45px;
+  border-radius: 3em;
+  border: 2px solid;
+  border-top-color: #b3b3b3;
+  border-left-color: #b3b3b3;
+  border-bottom-color: #5c5c5c61;
+  border-right-color: #5c5c5c61;
+  background-color: #5c5c5c61;
+  -webkit-appearance: none; /*to disable the default appearance of radio button*/
+  -moz-appearance: none;
 }
 
 input[type="radio"]:focus {
@@ -445,8 +451,7 @@ input[type="radio"]:checked {
   background: linear-gradient(180deg, #d20094, #900080);
 }
 
-
-label{
+label {
   position: relative;
   top: -35px;
   user-select: none;
@@ -456,42 +461,42 @@ label{
   color: white;
 }
 
-#form{
+#form {
   display: inline-block;
 }
 
 /* prova disposizione */
 
-.option{
+.option {
   display: inline-block;
   /* width: 50%; */
 }
 
 /* TESTO E TASTO PROX DOMANDA */
 
-#questionBody{
+#questionBody {
   font-weight: 400;
 }
 
-.container2{
-text-align: right;
+.container2 {
+  text-align: right;
 }
 
-#questions{
+#questions {
   text-align: center;
 }
 
-#randBtn{
+#randBtn {
   margin-block-end: 3rem;
   width: 18rem;
-    height: 4rem;
-    margin-block-end: 3rem;
-    border-color: white;
-    background: transparent;
-    color: white;
-    font-size: 16px;
-    border: solid;
-    cursor: pointer;
+  height: 4rem;
+  margin-block-end: 3rem;
+  border-color: white;
+  background: transparent;
+  color: white;
+  font-size: 16px;
+  border: solid;
+  cursor: pointer;
 }
 
 /* RATE BUTTON PAGINE RESULT */
@@ -514,35 +519,34 @@ text-align: right;
   margin-bottom: 10rem;
 
   transition: all 450ms ease-in-out;
-  
 }
-.rateBtn:hover{
+.rateBtn:hover {
   box-shadow: 0px 0px 30px 2px #00ffff;
   transform: translateY(-2px);
 }
 .rateBtn a {
- color: white;
- text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
 /* .rateBtn a:visited {
   color: white;
   text-decoration: none;
  } */
- .rateBtn a:visited {
+.rateBtn a:visited {
   color: white;
   text-decoration: none;
- }
+}
 
- /* QUESTION 1 SU 10 */
+/* QUESTION 1 SU 10 */
 
- #questionNumber{
+#questionNumber {
   font-weight: bolder;
- }
- /* .viola{
+}
+/* .viola{
   font-weight: bolder;
  } */
 
- .viola{
-  color:#900080;
+.viola {
+  color: #900080;
   vertical-align: baseline;
- }
+}
