@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Pagina 3</title>
     <link rel="stylesheet" href="./assets/css/style.css" />
 
     <script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-core.min.js"></script>
@@ -24,39 +24,32 @@
       <div class="dispInBlock">
         <div class="percent">
           <!-- Dove inserire la percentuale -->
-          <div class="title">Correct<span id="giuste"> </span></div>
-          <p class="paragReview"></p>
+          <div class="title">
+            Correct<span id="giuste"> </span>
+            <p id="giusteNum"></p>
+          </div>
         </div>
 
         <div id="container_donut"></div>
         <div class="percent">
           <!-- Dove inserire la percentuale -->
-          <div class="title dispInBlock">Wrong<span id="sbagliate"></span></div>
-          <p class="paragReview"></p>
+          <div class="title dispInBlock">
+            Wrong<span id="sbagliate"></span>
+            <p id="sbagliateNum"></p>
+          </div>
         </div>
       </div>
     </main>
     <div class="donut-chart percentage-25"></div>
+    <div class="rateBtnContainer">
+      <button type="button" class="rateBtn"><a id="rateLink">RATE US</a></button>
+    </div>
 
     <script>
       let parametro = new URLSearchParams(window.location.search).get("risultato");
       // create a standalone label
       let label = anychart.standalones.label();
 
-      label
-        .useHtml(true)
-        .text(
-          '<span style = "color: white; font-size:18px;">Congratulations!</span>' +
-            '<br><br><span style = "color: #00FFFF; font-size:18px;">You passed the exam:</span>' +
-            '<br><br><span style = "color: white; font-size:18px;">We`ll sent you the certificate in few minutes.</span>' +
-            '<br><span style = "color: white; font-size:18px;">Check your email (including promotions / spam folder)</span>'
-        )
-        .position("center")
-        .anchor("center")
-        .hAlign("center")
-        .vAlign("middle");
-      label.width("100%");
-      label.height("100%");
 
       // set the label as the center content
       //   chart.center().content(label);
@@ -108,10 +101,87 @@
 
       const percentuale = document.getElementById("giuste");
       percentuale.innerText = dataCorrette.giuste + "%";
+
       document.getElementById("sbagliate").innerText = dataCorrette.sbagliate + "%";
+
+      const giusteNum = document.getElementById("giusteNum");
+      giusteNum.innerText = dataCorrette.giuste/10 + "/10 questions";
+
+      const sbagliateNum = document.getElementById("sbagliateNum");
+      sbagliateNum.innerText = dataCorrette.sbagliate/10 + "/10 questions";
+
+      if (dataCorrette.giuste >= 50) {
+
+      label
+
+        .useHtml(true)
+        .text(
+          '<span style = "color: white; font-size:18px; font-family: Inter">Congratulations!</span>' +
+            '<br><br><span style = "color: #00FFFF; font-size:14px;">You passed the exam.</span>' +
+            '<br><br><span style = "color: white; font-size:14px;">We`ll sent you the certificate in few minutes.</span>' +
+            '<br><span style = "color: white; font-size:14px;">Check your email (including promotions / spam folder)</span>'
+        )
+        .position("center")
+        .anchor("center")
+        .hAlign("center")
+        .vAlign("middle");
+
+      label.width("100%");
+      label.height("100%");
+      
+    } else {
+
+      label
+
+.useHtml(true)
+.text(
+  '<span style = "color: white; font-size:18px; font-family: Inter;">Too bad!</span>' +
+    '<br><br><span style = "color: #00FFFF; font-size:14px; ">You didn`t pass the exam.</span>' +
+    '<br><br><span style = "color: white; font-size:14px;">You can try again next time to get your certificate.</span>' +
+    '<br><span style = "color: white; font-size:14px;">Check your email (including promotions / spam folder)</span>'
+)
+.position("center")
+.anchor("center")
+.hAlign("center")
+.vAlign("middle");
+
+label.width("100%");
+label.height("100%");
+
+    
+    }
+
+
+
+
+
+    /* label
+
+      .useHtml(true)
+      .text(
+        '<span style = "color: white; font-size:18px;">Congratulations!</span>' +
+          '<br><br><span style = "color: #00FFFF; font-size:18px;">You passed the exam.</span>' +
+          '<br><br><span style = "color: white; font-size:18px;">We`ll sent you the certificate in few minutes.</span>' +
+          '<br><span style = "color: white; font-size:18px;">Check your email (including promotions / spam folder)</span>'
+      )
+      .position("center")
+      .anchor("center")
+      .hAlign("center")
+      .vAlign("middle");
+
+    label.width("100%");
+    label.height("100%"); */
+
+  document.querySelector(".rateBtn").addEventListener("click", function() {
+  let link = document.getElementById("rateLink");
+  link.href = "./recensioni.html"; 
+  link.click(); 
+})
+
     </script>
 
-    <button type="submit">Rate us!</button>
+  
+
 
     <script src="./jsForAll.JS"></script>
   </body>

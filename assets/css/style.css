@@ -5,6 +5,7 @@
 
 * {
   box-sizing: border-box;
+  vertical-align: middle;
 }
 
 body {
@@ -166,8 +167,20 @@ ul {
   cursor: pointer;
   transition: all 450ms ease-in-out;
   font-weight: 600;
-  color: white;
+  color: black;
   font-size: medium;
+}
+
+.btn a {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 25px;
+  font-weight: bold;
+  color: black;
+}
+
+.btn a:visited {
+  color: black;
 }
 
 .sparkle {
@@ -204,9 +217,8 @@ ul {
 /* PROVA A INSERIRE MODIFICHE */
 
 .btn.active {
-  background: linear-gradient(0deg, #a47cf3, #683fea);
-  box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.4), inset 0px -4px 0px 0px rgba(0, 0, 0, 0.2),
-    0px 0px 0px 4px rgba(255, 255, 255, 0.2), 0px 0px 180px 0px #9917ff;
+  background-color: #00ffff;
+  box-shadow: 0px 0px 20px 0px #00ffff;
   transform: translateY(-2px);
 }
 
@@ -218,7 +230,7 @@ ul {
 /* CONTAINER 2 - FA APPARIRE LE DOMANDE */
 
 .container2 {
-  text-align: center;
+  /* text-align: right; */
   margin-block-start: 10rem;
 }
 
@@ -395,4 +407,75 @@ input {
   font-size: 40px;
   font-weight: 300;
   font-family: "Outfit", sans-serif;
+}
+
+
+/* input type radio */
+
+input[type="radio"]{
+  width: 50%;
+        height: 45px;
+        border-radius: 3em;
+        border: 2px solid;
+        border-top-color: #b3b3b3;
+        border-left-color: #b3b3b3;
+        border-bottom-color: #5c5c5c61;
+        border-right-color: #5c5c5c61;
+        background-color: #5c5c5c61;
+        -webkit-appearance: none; /*to disable the default appearance of radio button*/
+        -moz-appearance: none;
+}
+
+input[type="radio"]:focus {
+  /*no need, if you don't disable default appearance*/
+  outline: none; /*to remove the square border on focus*/
+}
+
+input[type="radio"]:checked {
+  /*no need, if you don't disable default appearance*/
+  background-color: #d20094;
+}
+
+/* input[type="radio"]:checked ~ span:first-of-type {
+  color: white;
+} */
+
+input:hover {
+  background: linear-gradient(180deg, #d20094, #900080);
+}
+
+
+label{
+  position: relative;
+  top: -35px;
+  user-select: none;
+  display: inline-block;
+  width: 50%;
+  font-size: 15px;
+  color: white;
+}
+
+#form{
+  display: inline-block;
+}
+
+/* prova disposizione */
+
+.option{
+  display: inline-block;
+  /* width: 50%; */
+}
+
+/* TESTO E TASTO PROX DOMANDA */
+
+#questionBody{
+  font-weight: 400;
+}
+
+.container2 #randBtn{
+text-align: right;
+}
+
+#questions{
+  text-align: center;
 }
