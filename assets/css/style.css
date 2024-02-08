@@ -230,7 +230,7 @@ ul {
 /* CONTAINER 2 - FA APPARIRE LE DOMANDE */
 
 .container2 {
-  text-align: center;
+  /* text-align: right; */
   margin-block-start: 10rem;
 }
 
@@ -409,38 +409,73 @@ input {
   font-family: "Outfit", sans-serif;
 }
 
-.rateBtnContainer {
-  width: 20rem;
-  margin-inline: auto;
-  text-align: center;
-  cursor: pointer;
+
+/* input type radio */
+
+input[type="radio"]{
+  width: 50%;
+        height: 45px;
+        border-radius: 3em;
+        border: 2px solid;
+        border-top-color: #b3b3b3;
+        border-left-color: #b3b3b3;
+        border-bottom-color: #5c5c5c61;
+        border-right-color: #5c5c5c61;
+        background-color: #5c5c5c61;
+        -webkit-appearance: none; /*to disable the default appearance of radio button*/
+        -moz-appearance: none;
 }
 
-.rateBtn {
-  border: 2px solid white;
-  background-color: transparent;
-  position: center;
-  height: 4.5rem;
-  width: 15rem;
-  box-shadow: 0px 0px 20px 0px rgba(16, 123, 237, 0.961);
-  margin-top: -2em;
-  margin-bottom: 10em;
-  cursor: pointer;
+input[type="radio"]:focus {
+  /*no need, if you don't disable default appearance*/
+  outline: none; /*to remove the square border on focus*/
 }
 
-.rateBtn a {
-  text-decoration: none;
+input[type="radio"]:checked {
+  /*no need, if you don't disable default appearance*/
+  background-color: #d20094;
+}
+
+/* input[type="radio"]:checked ~ span:first-of-type {
   color: white;
-  font-size: 25px;
-  font-weight: 600;
-  font-family: "Outfit", sans-serif;
+} */
+
+input:hover {
+  background: linear-gradient(180deg, #d20094, #900080);
 }
 
-.dispInBlock {
+
+label{
+  position: relative;
+  top: -35px;
+  user-select: none;
+  display: inline-block;
+  width: 50%;
+  font-size: 15px;
+  color: white;
+}
+
+#form{
+  display: inline-block;
+}
+
+/* prova disposizione */
+
+.option{
+  display: inline-block;
+  /* width: 50%; */
+}
+
+/* TESTO E TASTO PROX DOMANDA */
+
+#questionBody{
+  font-weight: 400;
+}
+
+.container2 #randBtn{
+text-align: right;
+}
+
+#questions{
   text-align: center;
-}
-
-#giusteNum,
-#sbagliateNum {
-  font-size: 25px;
 }
