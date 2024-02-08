@@ -130,6 +130,11 @@ function handleQuestionsOptions(e) {
   for (let i = 0; i < e.incorrect_answers.length + 1; i++) {
     let input = document.createElement("input");
     let label = document.createElement("label");
+    // let span = document.createElement("span");
+    input.classList.add("options");
+    // AGGIUNTO DA ME SPAN
+    // input.type = "radio";
+    //input radio originale
     input.type = "radio";
     input.name = "answer"; //assegno il tipo di imput
     input.addEventListener("change", function (event) {
@@ -139,12 +144,21 @@ function handleQuestionsOptions(e) {
     if (i < e.incorrect_answers.length) {
       input.value = 0; //le domande errate avrano valore 0
       label.innerText = e.incorrect_answers[i];
+      // AGGIUNTO DA ME SPAN INNER TEXT
     } else {
       input.value = 1; //le domande corrette avranno valore 1
+      // modifica classe input fatta da me
+
       label.innerText = e.correct_answer;
+      // AGGIUNTO DA ME SPAN INNER TEXT
     }
-    form.appendChild(label);
+
+    // ORIGINALE
+    // form.appendChild(label);
+    // form.appendChild(input);
+
     form.appendChild(input);
+    form.appendChild(label);
   }
 }
 
