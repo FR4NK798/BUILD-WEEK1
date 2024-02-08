@@ -130,8 +130,8 @@ function handleQuestionsOptions(e) {
   for (let i = 0; i < e.incorrect_answers.length + 1; i++) {
     let input = document.createElement("input");
     let label = document.createElement("label");
-    input.setAttribute("id", "labelFor")
-    label.htmlFor = 'labelFor';
+    input.setAttribute("id", "answers")
+    label.htmlFor = 'answers';
     input.type = "radio";
     input.name = "answer"; //assegno il tipo di imput
     input.addEventListener("change", function (event) {
@@ -139,11 +139,11 @@ function handleQuestionsOptions(e) {
       risposteDate.push(event.target.value);
     }); //assegno all'imput listener per aggiungere all'array di risposte quella selezionata
     if (i < e.incorrect_answers.length) {
-      input.value = 0; //le domande errate avrano valore 0
+      input.value = questions[i].incorrect_answers[0]; //le domande errate avrano valore 0
       label.innerText = e.incorrect_answers[i];
       // AGGIUNTO DA ME SPAN INNER TEXT
     } else {
-      input.value = 1; //le domande corrette avranno valore 1
+      input.value = question[i].correct_answer[0]; //le domande corrette avranno valore 1
       // modifica classe input fatta da me
 
       label.innerText = e.correct_answer;
