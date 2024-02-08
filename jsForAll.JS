@@ -141,19 +141,21 @@ function handleQuestionsOptions(e) {
     if (i < e.incorrect_answers.length) {
       input.value = questions[i].incorrect_answers[0]; //le domande errate avrano valore 0
       label.innerText = e.incorrect_answers[i];
-      // AGGIUNTO DA ME SPAN INNER TEXT
+
+      let classLabelRadioInc = e.incorrect_answers[i];
+      input.id = classLabelRadioInc;
+      label.htmlFor = classLabelRadioInc;
+      console.dir(label);
     } else {
       input.value = question[i].correct_answer[0]; //le domande corrette avranno valore 1
       // modifica classe input fatta da me
 
       label.innerText = e.correct_answer;
-      // AGGIUNTO DA ME SPAN INNER TEXT
+      let classLabelRadioCorr = e.correct_answers;
+      input.id = classLabelRadioCorr;
+      label.htmlFor = classLabelRadioCorr;
+      console.dir(label);
     }
-
-    // ORIGINALE
-    // form.appendChild(label);
-    // form.appendChild(input);
-
     form.appendChild(input);
     form.appendChild(label);
   }
@@ -175,5 +177,3 @@ function removeImput() {
 
 let arrGiuste = [];
 let arrSbagliate = [];
-
-
