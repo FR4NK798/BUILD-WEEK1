@@ -1,204 +1,515 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;600&display=swap");
+/*titolo */
 
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;600&display=swap');
-  /*titolo */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;500&display=swap"); /*corpo */
 
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;500&display=swap');    /*corpo */
-
-
-
-
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
+  vertical-align: middle;
 }
 
-body{
-    margin-inline:7.5rem;
-    background-image: url(../bg.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: white;
-    font-family: 'Inter', sans-serif;
-    font-weight: 200;
-    font-size: 16px;
+body {
+  margin-inline: 7.5rem;
+  background-image: url(/assets/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-weight: 200;
+  font-size: 16px;
 }
-header{
-    margin-block: 2.5rem;
+header {
+  margin-block: 2.5rem;
 }
-main{
-    margin-block: 5rem;
-}
-
-header img{
-    height: 2.5rem;
-}
-.title{
-    font-size: 60px;
-    font-weight: 300;
-    font-family: 'Outfit', sans-serif;
-    line-height: 3rem;
-    margin-block: 3rem;
-}
-.title span{
-    font-weight: 600;
-    display: block;
+main {
+  margin-block: 5rem;
 }
 
-span{
-    font-weight: 600;
+header img {
+  height: 2.5rem;
+}
+.title {
+  font-size: 60px;
+  font-weight: 300;
+  font-family: "Outfit", sans-serif;
+  line-height: 3rem;
+  margin-block: 3rem;
+}
+.title span {
+  font-weight: 600;
+  display: block;
 }
 
-
-h2{
-    color:#d20094;
-    margin-block-end: 0.5rem;
-}
-div p{
-    margin-block-start: 0.5rem
+span {
+  font-weight: 600;
 }
 
-.instruction{
-    width: 35rem;
-    margin-block-end: 3rem;
-
+h2 {
+  color: #d20094;
+  margin-block-end: 0.5rem;
+}
+div p {
+  margin-block-start: 0.5rem;
 }
 
-ul{
-    padding-inline-start: 1rem;
+.instruction {
+  width: 35rem;
+  margin-block-end: 3rem;
+}
+
+ul {
+  padding-inline-start: 1rem;
 }
 
 /* .checkbox-button{
-    margin-block-start: 9rem;
+  margin-block-start: 9rem;
 } */
 
 /* CHECKBOX PRESO DA INTERNET */
 
 /* MODIFICHE FATTE DA ME */
 
-.checkbox{
-    display: inline-block;
-    padding-inline-end: 0.5rem;
+.checkbox {
+  display: inline-block;
+  padding-inline-end: 0.5rem;
+}
+
+.checkboxText {
+  margin-left: 15px;
 }
 
 /* Hide the default checkbox */
 .container input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-    border-radius: 5px;
-   }
-   
-   .container {
-    display: inline-block;
-    position: relative;
-    cursor: pointer;
-    font-size: 0.8rem;
-    user-select: none;
-    border-radius: 5px;
-    box-shadow: 2px 2px 0px rgb(183, 183, 183);
-   }
-   
-   /* Create a custom checkbox */
-   .checkmark {
-    position: relative;
-    top: 0;
-    left: 0;
-    height: 1.3em;
-    width: 1.3em;
-    background-color: #ccc;
-    border-radius: 5px;
-   }
-   
-   /* When the checkbox is checked, add a blue background */
-   .container input:checked ~ .checkmark {
-    box-shadow: 3px 3px 0px rgb(183, 183, 183);
-    transition: all 0.2s;
-    opacity: 1;
-    background-image: linear-gradient(45deg, rgb(100, 61, 219) 0%, rgb(217, 21, 239) 100%);
-   }
-   
-   .container input ~ .checkmark {
-    transition: all 0.2s;
-    opacity: 1;
-    /* box-shadow: 1px 1px 0px rgb(183, 183, 183); */
-   }
-   
-   /* Create the checkmark/indicator (hidden when not checked) */
-   .checkmark:after {
-    content: "";
-    position: absolute;
-    opacity: 0;
-    transition: all 0.2s;
-   }
-   
-   /* Show the checkmark when checked */
-   .container input:checked ~ .checkmark:after {
-    opacity: 1;
-    transition: all 0.2s;
-   }
-   
-   /* Style the checkmark/indicator */
-   .container .checkmark:after {
-    left: 0.45em;
-    top: 0.25em;
-    width: 0.25em;
-    height: 0.5em;
-    border: solid white;
-    border-width: 0 0.15em 0.15em 0;
-    transform: rotate(45deg);
-   }
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+  border-radius: 5px;
+}
 
-   /* BOTTONE PRESO DA INTERNET */
+.container {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  font-size: 0.8rem;
+  user-select: none;
+  border-radius: 5px;
+  box-shadow: 2px 2px 0px rgb(183, 183, 183);
+}
 
-   /* MOFICCA FATTA DA ME */
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1.3em;
+  width: 1.3em;
+  background-color: #ccc;
+  border-radius: 5px;
+}
 
-   .button{
-    display: inline-block;
-    margin-inline-start: 12rem;
-   }
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  box-shadow: 3px 3px 0px rgb(183, 183, 183);
+  transition: all 0.2s;
+  opacity: 1;
+  background-image: linear-gradient(45deg, rgb(100, 61, 219) 0%, rgb(217, 21, 239) 100%);
+}
 
-   .btn {
-    border: none;
-    width: 15em;
-    height: 5em;
-    border-radius: 3em;
-    display: flex;
-    /* display: inline-block;  AGGIUNTO DA ME */
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
-    background: #1C1A1C;
-    cursor: pointer;
-    transition: all 450ms ease-in-out;
-  }
-  
-  .sparkle {
-    fill: #AAAAAA;
-    transition: all 800ms ease;
-  }
-  
-  .text {
-    font-weight: 600;
-    color: #AAAAAA;
-    font-size: medium;
-  }
-  
-  .btn:hover {
-    background: linear-gradient(0deg,#A47CF3,#683FEA);
-    box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.4),
-    inset 0px -4px 0px 0px rgba(0, 0, 0, 0.2),
-    0px 0px 0px 4px rgba(255, 255, 255, 0.2),
-    0px 0px 180px 0px #9917FF;
-    transform: translateY(-2px);
-  }
-  
-  .btn:hover .text {
-    color: white;
-  }
-  
-  .btn:hover .sparkle {
-    fill: white;
-    transform: scale(1.2);
-  } 
+.container input ~ .checkmark {
+  transition: all 0.2s;
+  opacity: 1;
+  /* box-shadow: 1px 1px 0px rgb(183, 183, 183); */
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  opacity: 0;
+  transition: all 0.2s;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  opacity: 1;
+  transition: all 0.2s;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 0.45em;
+  top: 0.25em;
+  width: 0.25em;
+  height: 0.5em;
+  border: solid white;
+  border-width: 0 0.15em 0.15em 0;
+  transform: rotate(45deg);
+}
+
+/* BOTTONE PRESO DA INTERNET */
+
+/* MODIFICA FATTA DA ME */
+
+.button {
+  display: inline-block;
+  margin-inline-start: 12rem;
+}
+
+.btn {
+  /* border-radius: 5rem; */
+  border: none;
+  width: 15em;
+  height: 5em;
+  display: flex;
+  /* display: inline-block;  AGGIUNTO DA ME */
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  background: #0000003d;
+  cursor: pointer;
+  transition: all 450ms ease-in-out;
+  font-weight: 600;
+  color: black;
+  font-size: medium;
+}
+
+.btn a {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 25px;
+  font-weight: bold;
+  color: black;
+}
+
+.btn a:visited {
+  color: black;
+}
+
+.sparkle {
+  fill: #aaaaaa;
+  transition: all 800ms ease;
+}
+
+/* MODIFICARE DA QUA */
+/* .btn:hover { 
+   background-color: #00FFFF;
+   box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.4),
+   0px 0px 180px 0px #00FFFF;
+} */
+/* MODIFICA HOVER MOUSE SOPRA */
+
+/* .btn:hover {       ORIGINALE
+  background: linear-gradient(0deg,#A47CF3,#683FEA);
+  box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.4),
+  inset 0px -4px 0px 0px rgba(0, 0, 0, 0.2),
+  0px 0px 0px 4px rgba(255, 255, 255, 0.2),
+  0px 0px 180px 0px #9917FF;
+  transform: translateY(-2px);
+} */
+/* ANIMAZIONE PASSA SOPRA IL MOUSE */
+/* .btn:hover .text {
+  color: black;
+}
+
+.btn:hover .sparkle {
+  fill: black;
+  transform: scale(1.2);
+}  */
+
+/* PROVA A INSERIRE MODIFICHE */
+
+.btn.active {
+  background-color: #00ffff;
+  box-shadow: 0px 0px 20px 0px #00ffff;
+  transform: translateY(-2px);
+}
+
+.btn.active .sparkle {
+  fill: white;
+  transform: scale(1.2);
+}
+
+/* CONTAINER 2 - FA APPARIRE LE DOMANDE */
+
+.container2 {
+  /* text-align: right; */
+  margin-block-start: 10rem;
+}
+
+/* BOTTONE RISPOSTE */
+
+.btn2:hover {
+  background: linear-gradient(180deg, #d20094, #900080);
+}
+
+.btn2:active {
+  box-shadow: 2px 2px 5px #d20094;
+}
+.btn2 {
+  background-color: #ffffff00;
+  width: 20em;
+  height: 5em;
+  border-radius: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 600;
+  color: white;
+
+  font-size: medium;
+}
+
+/* PAGINA REVIEW */
+
+.review {
+  text-align: center;
+  margin-inline: auto;
+  width: 38rem;
+  margin-block-start: 10rem;
+}
+
+.paragReview {
+  font-size: 1.5rem;
+  margin-block-end: 2.5rem;
+}
+
+.txRv {
+  margin-block-start: 7rem;
+  font-weight: 600;
+  margin-block-end: 2rem;
+}
+
+/* PROVA BOTTONE STELLA */
+
+.rating {
+  font-size: 2.7rem;
+  display: inline-block;
+  margin-block-start: 2rem;
+  margin-block-end: 4rem;
+}
+
+.rating__star {
+  cursor: pointer;
+  color: #00ffff;
+}
+/* feedback */
+.feed {
+  font-size: 1.4rem;
+}
+
+/* CASELLA COMMENTO */
+input {
+  width: 100%;
+  background-color: transparent;
+  border-block-start: none;
+  border-inline: none;
+  border-color: #d20094;
+}
+
+/* BOTTONE PAGINE REVIEW */
+
+.btnReview {
+  border: none;
+  width: 15em;
+  height: 5em;
+  justify-content: center;
+  align-items: center;
+  background: #1c1a1c;
+  cursor: pointer;
+  transition: all 450ms ease-in-out;
+  font-weight: 600;
+  color: white;
+
+  font-size: medium;
+}
+
+.btnReview:hover {
+  background: #00ffff;
+  box-shadow: 0px 0px 180px 0px #00ffff;
+  transform: translateY(-2px);
+}
+
+.btnReviewCenter {
+  margin-inline: auto;
+  margin-block-start: 5rem;
+}
+
+/* CAMPO INPUT */
+input {
+  height: 3rem;
+  font-size: 1.3rem;
+  color: white;
+}
+
+/* PAGINA RESULT */
+
+.result {
+  text-align: center;
+  margin-block: 0;
+}
+
+.lastPage {
+  margin-block-start: 3rem;
+}
+
+/* DONUT */
+
+#container_donut {
+  width: 500px;
+  height: 500px;
+  display: inline-block;
+}
+
+/* PAGINA RESULT */
+
+.percent {
+  display: inline-block;
+}
+
+/* TIMER PAGINA BENCHMARK */
+
+.countdown {
+  width: 6.5rem;
+  height: 6.5rem;
+  position: relative;
+}
+.circle {
+  content: "";
+  background: conic-gradient(#886192 50%, #00ffff 20%) border-box;
+  -webkit-mask: /*4*/ conic-gradient(#fff 0 0) padding-box, conic-gradient(#fff 0 0);
+  -webkit-mask-composite: xor; /*5'*/
+  mask-composite: exclude; /*5*/
+  border: 10px solid transparent;
+  border-radius: 50px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+.timer {
+  text-align: center;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#countdownContainer {
+  position: fixed;
+  right: 7rem;
+  font-family: "Outfit", sans-serif;
+  font-size: 8px;
+  line-height: 1.3rem;
+}
+
+.numberCountdown {
+  font-size: 40px;
+  font-weight: 300;
+  font-family: "Outfit", sans-serif;
+}
+
+/* BOTTONE RISULTATI */
+
+.rateBtnContainer {
+  text-align: center;
+  cursor: pointer;
+}
+
+.rateBtn {
+  width: 17rem;
+  height: 5rem;
+  background-color: transparent;
+  border: 3px solid white;
+  font-size: 30px;
+  font-weight: 600;
+  font-family: "Outfit", sans-serif;
+  color: white;
+  cursor: pointer;
+  margin-top: -1rem;
+  margin-bottom: 10rem;
+  box-shadow: 0px 0px 30px 2px #00ffff;
+}
+
+.rateBtn a {
+  color: white;
+  text-decoration: none;
+}
+
+.rateBtn a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+/* input type radio */
+
+input[type="radio"] {
+  width: 50%;
+  height: 45px;
+  border-radius: 3em;
+  border: 2px solid;
+  border-top-color: #b3b3b3;
+  border-left-color: #b3b3b3;
+  border-bottom-color: #5c5c5c61;
+  border-right-color: #5c5c5c61;
+  background-color: #5c5c5c61;
+  -webkit-appearance: none; /*to disable the default appearance of radio button*/
+  -moz-appearance: none;
+}
+
+input[type="radio"]:focus {
+  /*no need, if you don't disable default appearance*/
+  outline: none; /*to remove the square border on focus*/
+}
+
+input[type="radio"]:checked {
+  /*no need, if you don't disable default appearance*/
+  background-color: #d20094;
+}
+
+/* input[type="radio"]:checked ~ span:first-of-type {
+  color: white;
+} */
+
+input:hover {
+  background: linear-gradient(180deg, #d20094, #900080);
+}
+
+label {
+  position: relative;
+  top: -10px;
+  user-select: none;
+  display: inline-block;
+  width: 50%;
+  font-size: 15px;
+  color: white;
+}
+
+#form {
+  display: inline-block;
+}
+
+/* prova disposizione */
+
+.option {
+  display: inline-block;
+  /* width: 50%; */
+}
+
+/* TESTO E TASTO PROX DOMANDA */
+
+#questionBody {
+  font-weight: 400;
+}
+
+.container2 #randBtn {
+  text-align: right;
+}
+
+#questions {
+  text-align: center;
+}
