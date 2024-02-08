@@ -84,7 +84,10 @@ const questions = [
 
 let counterDomande = 0; //contatore delle domande
 let risposteDate = []; //tiene traccia delle risposte, servirà per quando farete il calcolo dei punteggi
+let arrGiuste = [];
+let arrSbagliate = [];
 
+console.log(risposteDate);
 window.onload = () => {
   questions.forEach((x) => {
     x.order = Math.random() * questions.length; //aggiunge un campo alle domande per rappresentarne l'ordinamento casuale
@@ -113,9 +116,21 @@ buttonDomande.addEventListener("click", function getDomanda() {
     questionBody.innerText = "Finito!";
     removeImput();
     DOMCounter.innerText = "";
-    const sommaRisposteCorrette = risposteDate.reduce((accumulator, currentValue) => {
+    for (let i = 0; i < risposteDate.length; i++) {
+      if (risposteDate[i] === "b" && risposteDate[i] !== NaN) {
+        let numCorrect = 1;
+        arrGiuste.push(numCorrect);
+      } else if (risposteDate[i] === "a" && risposteDate[i] !== NaN) {
+        let numCorrect = 1;
+        arrSbagliate.push(numCorrect);
+      }
+    }
+
+    const sommaRisposteCorrette = arrGiuste.reduce((accumulator, currentValue) => {
       return parseInt(accumulator) + parseInt(currentValue);
     });
+    console.log(sommaRisposteCorrette);
+
     arrGiuste.push(sommaRisposteCorrette * 10);
     arrSbagliate.push((10 - sommaRisposteCorrette) * 10);
     let linkA = document.createElement("a");
@@ -139,16 +154,15 @@ function handleQuestionsOptions(e) {
       risposteDate.push(event.target.value);
     }); //assegno all'imput listener per aggiungere all'array di risposte quella selezionata
     if (i < e.incorrect_answers.length) {
-      input.value = questions[i].incorrect_answers; //le domande errate avrano valore 0
-      label.innerText = e.incorrect_answers;
+      input.value = "a"; //le domande errate avrano valore 0
+      label.innerText = e.incorrect_answers[i];
 
       let classLabelRadioInc = e.incorrect_answers;
       input.id = classLabelRadioInc;
       label.htmlFor = classLabelRadioInc;
       console.dir(label);
     } else {
-      input.value = question[i].correct_answer; //le domande corrette avranno valore 1
-      // modifica classe input fatta da me
+      input.value = "b"; //le domande corrette avranno valore 1
 
       label.innerText = e.correct_answer;
       let classLabelRadioCorr = e.correct_answers;
@@ -174,6 +188,3 @@ function removeImput() {
 }
 
 //Codici progetto pagina 3
-
-let arrGiuste = [];
-let arrSbagliate = [];
