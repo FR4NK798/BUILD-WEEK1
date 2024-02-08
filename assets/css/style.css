@@ -74,6 +74,10 @@ ul {
   padding-inline-end: 0.5rem;
 }
 
+.checkboxText {
+   margin-left: 15px;
+}
+
 /* Hide the default checkbox */
 .container input {
   position: absolute;
@@ -96,7 +100,7 @@ ul {
 
 /* Create a custom checkbox */
 .checkmark {
-  position: relative;
+  position: absolute;
   top: 0;
   left: 0;
   height: 1.3em;
@@ -432,12 +436,12 @@ input {
 }
 
 .rateBtn a {
- color: white
+ color: white;
  text-decoration: none;
 }
 
 .rateBtn a:visited {
-  color: white
+  color: white;
   text-decoration: none;
  }
 
@@ -479,7 +483,7 @@ input:hover {
 
 label{
   position: relative;
-  top: -35px;
+  top: -10px;
   user-select: none;
   display: inline-block;
   width: 50%;
