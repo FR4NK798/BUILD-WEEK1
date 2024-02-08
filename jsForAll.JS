@@ -102,12 +102,21 @@ const form = document.getElementById("form");
 
 buttonDomande.addEventListener("click", function getDomanda() {
   buttonDomande["disabled"] = "true"; //disabilita il pulsante per andare alla domanda successiva se non si ha selezionato una risposta
+  let questInnerText = null;
+  const viola = document.querySelector("#questionNumber span");
+  viola.innerText = "/10";
+  console.log("Viola: ", viola);
+
   if (counterDomande < 10) {
     questionBody.innerText = questions[counterDomande].question; //inserisce il testo della domanda nel div
     removeImput(); //vedi sotto
     handleQuestionsOptions(questions[counterDomande]); //vedi sotto
     counterDomande++;
-    DOMCounter.innerText = counterDomande; //aggiorna il contatore a video
+
+    questInnerText = "QUESTION " + counterDomande;
+
+    DOMCounter.innerText = questInnerText; //aggiorna il contatore a video   ORIGINALE
+    DOMCounter.appendChild(viola);
   } else {
     buttonDomande["hidden"] = "true"; //nasconde il pulsante una volta che le domande sono finite
     questionBody.innerText = "Finito!";
