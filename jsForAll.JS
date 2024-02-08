@@ -139,15 +139,15 @@ function handleQuestionsOptions(e) {
       risposteDate.push(event.target.value);
     }); //assegno all'imput listener per aggiungere all'array di risposte quella selezionata
     if (i < e.incorrect_answers.length) {
-      input.value = questions[i].incorrect_answers[0]; //le domande errate avrano valore 0
-      label.innerText = e.incorrect_answers[i];
+      input.value = questions[i].incorrect_answers; //le domande errate avrano valore 0
+      label.innerText = e.incorrect_answers;
 
-      let classLabelRadioInc = e.incorrect_answers[i];
+      let classLabelRadioInc = e.incorrect_answers;
       input.id = classLabelRadioInc;
       label.htmlFor = classLabelRadioInc;
       console.dir(label);
     } else {
-      input.value = question[i].correct_answer[0]; //le domande corrette avranno valore 1
+      input.value = question[i].correct_answer; //le domande corrette avranno valore 1
       // modifica classe input fatta da me
 
       label.innerText = e.correct_answer;
