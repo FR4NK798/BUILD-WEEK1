@@ -94,9 +94,16 @@ ul {
   box-shadow: 2px 2px 0px rgb(183, 183, 183);
 }
 
+#checkboxLabel {
+  /* top: -0.1em; */
+  margin-right: 1em;
+  top: -0.7em;
+}
+
 /* Create a custom checkbox */
 .checkmark {
-  position: relative;
+  /* position: relative; */
+  position: absolute;
   top: 0;
   left: 0;
   height: 1.3em;
