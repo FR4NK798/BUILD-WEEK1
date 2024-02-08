@@ -130,6 +130,8 @@ function handleQuestionsOptions(e) {
   for (let i = 0; i < e.incorrect_answers.length + 1; i++) {
     let input = document.createElement("input");
     let label = document.createElement("label");
+    input.setAttribute("id", "labelFor")
+    label.htmlFor = 'labelFor';
     input.type = "radio";
     input.name = "answer"; //assegno il tipo di imput
     input.addEventListener("change", function (event) {
