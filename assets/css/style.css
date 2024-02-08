@@ -483,6 +483,7 @@ label {
 #questionBody {
   font-weight: 400;
   margin-bottom: 1em;
+  padding-inline: 2em;
 }
 
 .container2 {
