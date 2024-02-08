@@ -103,14 +103,13 @@ const form = document.getElementById("form");
 function showNextQuestion() {
   buttonDomande.disabled = true;
   let questInnerText = null;
-  osta;
   const viola = document.querySelector("#questionNumber span");
   viola.innerText = "/10";
   console.log("Viola: ", viola);
 
   if (counterDomande < 10) {
     questionBody.innerText = questions[counterDomande].question;
-    removeImput(); //vedi sotto
+    removeImput();
     handleQuestionsOptions(questions[counterDomande]);
     counterDomande++;
 
