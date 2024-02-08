@@ -6,6 +6,7 @@
 * {
   box-sizing: border-box;
   vertical-align: middle;
+  
 }
 
 body {
@@ -356,6 +357,7 @@ input {
 
 .lastPage {
   margin-block-start: 3rem;
+  text-align: center;
 }
 
 /* DONUT */
@@ -371,6 +373,11 @@ input {
 .percent {
   display: inline-block;
 }
+
+#giusteNum, #sbagliateNum {
+  font-size: 25px;
+}
+
 
 /* TIMER PAGINA BENCHMARK */
 
