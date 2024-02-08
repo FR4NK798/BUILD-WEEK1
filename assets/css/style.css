@@ -467,15 +467,15 @@ label {
 
 /* prova disposizione */
 
-.option {
+.options {
   display: inline-block;
-  /* width: 50%; */
 }
 
 /* TESTO E TASTO PROX DOMANDA */
 
 #questionBody {
   font-weight: 400;
+  margin-bottom: 1em;
 }
 
 .container2 {
@@ -549,4 +549,14 @@ label {
 .viola {
   color: #900080;
   vertical-align: baseline;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.resultBtn {
+  text-decoration: none;
+  font-size: 30px;
+  padding: 0.5em;
 }
