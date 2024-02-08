@@ -122,11 +122,17 @@ function showNextQuestion() {
     questionBody.innerText = "Finito!";
     removeImput();
     DOMCounter.innerText = "";
-    const sommaRisposteCorrette = risposteDate.reduce((accumulator, currentValue) => {
-      return parseInt(accumulator) + parseInt(currentValue);
-    });
-    arrGiuste.push(sommaRisposteCorrette * 10);
-    arrSbagliate.push((10 - sommaRisposteCorrette) * 10);
+    // const sommaRisposteCorrette = risposteDate.reduce((accumulator, currentValue) => {
+    //   return parseInt(accumulator) + parseInt(currentValue);
+    // });
+    let sommaRisposteCorrette = 0;
+    for (let i = 0; i < risposteDate.length; i++) {
+      if (risposteDate[i] === questions[i].correct_answer) {
+        sommaRisposteCorrette++;
+      }
+    }
+    // arrGiuste.push(sommaRisposteCorrette * 10);
+    // arrSbagliate.push((10 - sommaRisposteCorrette) * 10);
     let linkA = document.createElement("a");
     linkA.href = "result.HTML?risultato=" + sommaRisposteCorrette;
     linkA.innerText = "Vai al risultato";
@@ -157,7 +163,8 @@ function handleQuestionsOptions(e) {
       risposteDate.push(event.target.value);
     }); //assegno all'imput listener per aggiungere all'array di risposte quella selezionata
     if (i < e.incorrect_answers.length) {
-      input.value = 0; //le domande errate avrano valore 0
+      input.value = e.incorrect_answers[i]; //le domande errate avrano valore 0
+
       label.innerText = e.incorrect_answers[i];
 
       let classLabelRadioInc = e.incorrect_answers[i];
@@ -165,7 +172,7 @@ function handleQuestionsOptions(e) {
       label.htmlFor = classLabelRadioInc;
       console.dir(label);
     } else {
-      input.value = 1; //le domande corrette avranno valore 1
+      input.value = e.correct_answer; //le domande corrette avranno valore 1
 
       label.innerText = e.correct_answer;
       let classLabelRadioCorr = e.correct_answers;
@@ -192,11 +199,8 @@ function removeImput() {
 
 //Codici progetto pagina 3
 
-let arrGiuste = [];
-let arrSbagliate = [];
-
-
-
+// let arrGiuste = [];
+// let arrSbagliate = [];
 
 /* 
 
@@ -228,4 +232,3 @@ function restartTimer(){
     startTimer()
 }
  */
-
