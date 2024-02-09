@@ -6,7 +6,6 @@
 * {
   box-sizing: border-box;
   vertical-align: middle;
-  
 }
 
 body {
@@ -242,8 +241,6 @@ ul {
   margin-block-start: 10rem;
 }
 
-
-
 /* PAGINA REVIEW */
 
 .review {
@@ -333,6 +330,26 @@ input {
   margin-block: 0;
 }
 
+.resultBtn {
+  width: 17rem;
+  height: 5rem;
+  background-color: transparent;
+  border: 3px solid white;
+  font-size: 30px;
+  font-weight: 600;
+  font-family: "Outfit", sans-serif;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 450ms ease-in-out;
+  padding: 10px;
+}
+
+.resultBtn:hover {
+  box-shadow: 0px 0px 30px 2px #00ffff;
+  transform: translateY(-2px);
+}
+
 .lastPage {
   margin-block-start: 3rem;
   text-align: center;
@@ -352,10 +369,10 @@ input {
   display: inline-block;
 }
 
-#giusteNum, #sbagliateNum {
+#giusteNum,
+#sbagliateNum {
   font-size: 25px;
 }
-
 
 /* TIMER PAGINA BENCHMARK */
 
@@ -402,8 +419,7 @@ input {
   font-family: "Outfit", sans-serif;
 }
 
-
-#form{
+#form {
   display: inline-block;
   width: 100%;
 }
@@ -473,7 +489,7 @@ input {
   text-decoration: none;
 }
 
- .rateBtn a:visited {
+.rateBtn a:visited {
   color: white;
   text-decoration: none;
 }
@@ -482,13 +498,12 @@ input {
 
 #questionNumber {
   font-weight: bolder;
- }
+}
 
 .viola {
   color: #900080;
   vertical-align: baseline;
- }
-
+}
 
 /* BOTTONE RISPOSTE */
 
@@ -500,30 +515,29 @@ input {
   box-shadow: 2px 2px 5px #d20094;
 }
 
- /* disposizioni tasti risposte */
+/* disposizioni tasti risposte */
 
- .inputRelative{
+.inputRelative {
   display: none;
 }
 
-
-.labelAbsolute{
+.labelAbsolute {
   font-size: 15px;
   color: white;
   display: inline-block;
   padding-block-start: 0.5rem;
   margin: 0.5rem;
   width: 40%;
-    height: 45px;
-    border-radius: 3em;
-    border: 2px solid;
-    border-top-color: #b3b3b3;
-    border-left-color: #b3b3b3;
-    border-bottom-color: #5c5c5c61;
-    border-right-color: #5c5c5c61;
-    background-color: #5c5c5c61;
-    cursor: pointer;
-    font-weight: 600;
+  height: 45px;
+  border-radius: 3em;
+  border: 2px solid;
+  border-top-color: #b3b3b3;
+  border-left-color: #b3b3b3;
+  border-bottom-color: #5c5c5c61;
+  border-right-color: #5c5c5c61;
+  background-color: #5c5c5c61;
+  cursor: pointer;
+  font-weight: 600;
 }
 
 /* PROVA CHECK LABEL */

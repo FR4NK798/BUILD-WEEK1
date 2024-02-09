@@ -132,7 +132,6 @@ function showNextQuestion() {
     let linkA = document.createElement("a");
     linkA.href = "result.HTML?risultato=" + sommaRisposteCorrette;
     linkA.innerText = "Vai al risultato";
-    linkA.classList.add("rateBtn");
     linkA.classList.add("resultBtn");
     document.getElementById("link").appendChild(linkA);
   }
