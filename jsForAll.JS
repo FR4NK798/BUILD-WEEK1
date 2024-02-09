@@ -95,13 +95,13 @@ window.onload = () => {
   //ordina le domande secondo l'ordine appena dato
 };
 
-const buttonDomande = document.getElementById("randBtn");
+/* const buttonDomande = document.getElementById("randBtn"); */
 const questionBody = document.getElementById("questionBody");
 const DOMCounter = document.getElementById("questionNumber");
 const form = document.getElementById("form");
 
 function showNextQuestion() {
-  buttonDomande.disabled = true;
+  /* buttonDomande.disabled = true; */
   let questInnerText = null;
   const viola = document.querySelector("#questionNumber span");
   viola.innerText = "/10";
@@ -118,17 +118,18 @@ function showNextQuestion() {
     DOMCounter.innerText = questInnerText;
     DOMCounter.appendChild(viola);
   } else {
-    buttonDomande.hidden = true;
+    /* buttonDomande.hidden = true; */
     questionBody.innerText = "Finito!";
     removeImput();
     DOMCounter.innerText = "";
     // const sommaRisposteCorrette = risposteDate.reduce((accumulator, currentValue) => {
     //   return parseInt(accumulator) + parseInt(currentValue);
     // });
-    let sommaRisposteCorrette = 0;
+    let sommaRisposteCorrette = 1;
     for (let i = 0; i < risposteDate.length; i++) {
       if (risposteDate[i] === questions[i].correct_answer) {
         sommaRisposteCorrette++;
+        console.log(sommaRisposteCorrette);
       }
     }
     // arrGiuste.push(sommaRisposteCorrette * 10);
@@ -144,7 +145,7 @@ function showNextQuestion() {
 
 showNextQuestion();
 
-buttonDomande.addEventListener("click", showNextQuestion);
+/* buttonDomande.addEventListener("click", showNextQuestion); */
 
 function handleQuestionsOptions(e) {
   //gestisce il comportamento delle domande, aggiungendo imput e label in base a quante risposte ci sono
@@ -163,9 +164,12 @@ function handleQuestionsOptions(e) {
     input.type = "radio";
     input.name = "answer"; //assegno il tipo di imput
     input.addEventListener("change", function (event) {
-      buttonDomande.removeAttribute("disabled");
+      /* buttonDomande.removeAttribute("disabled"); */
       risposteDate.push(event.target.value);
-    }); //assegno all'imput listener per aggiungere all'array di risposte quella selezionata
+      console.log(risposteDate);
+      showNextQuestion();
+    });
+    //assegno all'imput listener per aggiungere all'array di risposte quella selezionata
     if (i < e.incorrect_answers.length) {
       input.value = e.incorrect_answers[i]; //le domande errate avrano valore 0
 
@@ -207,8 +211,6 @@ function removeImput() {
 // let arrGiuste = [];
 // let arrSbagliate = [];
 
-
-
 /* FUNZIONE PER TIMER BENCHMARK
 
 let timerRef;
@@ -237,5 +239,3 @@ function restartTimer(){
     startTimer()
 }
  */
-
-
