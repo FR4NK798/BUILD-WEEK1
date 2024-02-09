@@ -520,6 +520,9 @@ text-align: right;
 .labelAbsolute:active {
   box-shadow: 2px 2px 5px #d20094;
 }
+.labelAbsolute:visited {
+  background: linear-gradient(180deg, #d20094, #900080);
+}
  /* disposizioni tasti risposte */
 
  .inputRelative{
