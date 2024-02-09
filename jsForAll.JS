@@ -147,11 +147,10 @@ function handleQuestionsOptions(e) {
   for (let i = 0; i < e.incorrect_answers.length + 1; i++) {
     let input = document.createElement("input");
     let label = document.createElement("label");
-    // let span = document.createElement("span");
-    input.classList.add("options");
-    // AGGIUNTO DA ME SPAN
-    // input.type = "radio";
-    //input radio originale
+    label.classList.add("labelAbsolute");
+    let divRadio = document.createElement("div");
+    divRadio.classList.add("divRadio");
+    input.classList.add("inputRelative");
     input.type = "radio";
     input.name = "answer"; //assegno il tipo di imput
     //assegno all'imput listener per aggiungere all'array di risposte quella selezionata
@@ -183,6 +182,7 @@ function handleQuestionsOptions(e) {
         showNextQuestion();
       });
     }
+
     form.appendChild(input);
     form.appendChild(label);
   }
