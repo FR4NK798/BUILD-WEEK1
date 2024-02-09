@@ -389,41 +389,6 @@ input {
 }
 
 
-/* input type radio */
-
-input[type="radio"]{
-  width: 40%;
-        height: 45px;
-        border-radius: 3em;
-        border: 2px solid;
-        border-top-color: #b3b3b3;
-        border-left-color: #b3b3b3;
-        border-bottom-color: #5c5c5c61;
-        border-right-color: #5c5c5c61;
-        background-color: #5c5c5c61;
-        -webkit-appearance: none; /*to disable the default appearance of radio button*/
-        -moz-appearance: none;
-}
-
-input[type="radio"]:focus {
-  /*no need, if you don't disable default appearance*/
-  outline: none; /*to remove the square border on focus*/
-}
-
-input[type="radio"]:checked {
-  /*no need, if you don't disable default appearance*/
-  background-color: #d20094;
-}
-
-/* input[type="radio"]:checked ~ span:first-of-type {
-  color: white;
-} */
-
-.options:hover {
-  background: linear-gradient(180deg, #d20094, #900080);
-}
-
-
 #form{
   display: inline-block;
   width: 100%;
@@ -520,9 +485,7 @@ text-align: right;
 .labelAbsolute:active {
   box-shadow: 2px 2px 5px #d20094;
 }
-.labelAbsolute:visited {
-  background: linear-gradient(180deg, #d20094, #900080);
-}
+
  /* disposizioni tasti risposte */
 
  .inputRelative{
@@ -547,4 +510,9 @@ text-align: right;
     background-color: #5c5c5c61;
     cursor: pointer;
     font-weight: 600;
+}
+
+/* PROVA CHECK LABEL */
+.inputRelative:checked + .labelAbsolute {
+  background: linear-gradient(180deg, #d20094, #900080);
 }
