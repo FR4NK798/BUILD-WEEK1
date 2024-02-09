@@ -50,7 +50,6 @@
       // create a standalone label
       let label = anychart.standalones.label();
 
-
       // set the label as the center content
       //   chart.center().content(label);
 
@@ -93,7 +92,7 @@
         });
         // chart.tooltip().format("Percent of total wins: {%PercentValue}%");
       });
-
+      // corretto dati e risultato risposte
       let dataCorrette = {
         giuste: parametro * 10,
         sbagliate: (10 - parametro) * 10,
@@ -101,61 +100,52 @@
 
       const percentuale = document.getElementById("giuste");
       percentuale.innerText = dataCorrette.giuste + "%";
-
+      // percentuale lato destro sinistra
       document.getElementById("sbagliate").innerText = dataCorrette.sbagliate + "%";
 
       const giusteNum = document.getElementById("giusteNum");
-      giusteNum.innerText = dataCorrette.giuste/10 + "/10 questions";
+      giusteNum.innerText = dataCorrette.giuste / 10 + "/10 questions";
 
       const sbagliateNum = document.getElementById("sbagliateNum");
-      sbagliateNum.innerText = dataCorrette.sbagliate/10 + "/10 questions";
+      sbagliateNum.innerText = dataCorrette.sbagliate / 10 + "/10 questions";
 
       if (dataCorrette.giuste >= 50) {
+        label
 
-      label
+          .useHtml(true)
+          .text(
+            '<span style = "color: white; font-size:18px; font-family: Inter">Congratulations!</span>' +
+              '<br><br><span style = "color: #00FFFF; font-size:14px;">You passed the exam.</span>' +
+              '<br><br><span style = "color: white; font-size:14px;">We`ll send you the certificate in a few minutes.</span>' +
+              '<br><span style = "color: white; font-size:14px;">Check your email (including promotions / spam folder)</span>'
+          )
+          .position("center")
+          .anchor("center")
+          .hAlign("center")
+          .vAlign("middle");
 
-        .useHtml(true)
-        .text(
-          '<span style = "color: white; font-size:18px; font-family: Inter">Congratulations!</span>' +
-            '<br><br><span style = "color: #00FFFF; font-size:14px;">You passed the exam.</span>' +
-            '<br><br><span style = "color: white; font-size:14px;">We`ll send you the certificate in a few minutes.</span>' +
-            '<br><span style = "color: white; font-size:14px;">Check your email (including promotions / spam folder)</span>'
-        )
-        .position("center")
-        .anchor("center")
-        .hAlign("center")
-        .vAlign("middle");
+        label.width("100%");
+        label.height("100%");
+      } else {
+        label
 
-      label.width("100%");
-      label.height("100%");
-      
-    } else {
+          .useHtml(true)
+          .text(
+            '<span style = "color: white; font-size:18px; font-family: Inter;">Too bad!</span>' +
+              '<br><br><span style = "color: #00FFFF; font-size:14px; ">You didn`t pass the exam.</span>' +
+              '<br><br><span style = "color: white; font-size:14px;">You can try again next time to get your certificate.</span>' +
+              '<br><span style = "color: white; font-size:14px;">Check your email (including promotions / spam folder)</span>'
+          )
+          .position("center")
+          .anchor("center")
+          .hAlign("center")
+          .vAlign("middle");
 
-      label
+        label.width("100%");
+        label.height("100%");
+      }
 
-.useHtml(true)
-.text(
-  '<span style = "color: white; font-size:18px; font-family: Inter;">Too bad!</span>' +
-    '<br><br><span style = "color: #00FFFF; font-size:14px; ">You didn`t pass the exam.</span>' +
-    '<br><br><span style = "color: white; font-size:14px;">You can try again next time to get your certificate.</span>' +
-    '<br><span style = "color: white; font-size:14px;">Check your email (including promotions / spam folder)</span>'
-)
-.position("center")
-.anchor("center")
-.hAlign("center")
-.vAlign("middle");
-
-label.width("100%");
-label.height("100%");
-
-    
-    }
-
-
-
-
-
-    /* label
+      /* label
 
       .useHtml(true)
       .text(
@@ -172,16 +162,12 @@ label.height("100%");
     label.width("100%");
     label.height("100%"); */
 
-  document.querySelector(".rateBtn").addEventListener("click", function() {
-  let link = document.getElementById("rateLink");
-  link.href = "./reviews.html"; 
-  link.click(); 
-})
-
+      document.querySelector(".rateBtn").addEventListener("click", function () {
+        let link = document.getElementById("rateLink");
+        link.href = "./reviews.html";
+        link.click();
+      });
     </script>
-
-  
-
 
     <script src="./benchmark.JS"></script>
   </body>

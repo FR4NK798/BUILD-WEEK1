@@ -83,15 +83,19 @@ const questions = [
 ];
 
 let counterDomande = 0; //contatore delle domande
-let risposteDate = []; //tiene traccia delle risposte, servirà per quando farete il calcolo dei punteggi
+let risposteDate = []; //tiene traccia delle risposte,
+// servirà per quando farete il calcolo dei punteggi
 
 window.onload = () => {
   questions.forEach((x) => {
     x.order = Math.random() * questions.length; //aggiunge un campo alle domande per rappresentarne l'ordinamento casuale
+    console.log(x.order);
+    console.log(questions);
   });
   questions.sort(function (a, b) {
     return a.order - b.order;
   });
+  console.log("ordinato", questions);
   //ordina le domande secondo l'ordine appena dato
 };
 
