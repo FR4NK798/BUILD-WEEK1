@@ -1,4 +1,5 @@
 const ratingStars = [...document.getElementsByClassName("rating__star")];
+console.log(ratingStars);
 
 function executeRating(stars) {
   const starClassActive = "rating__star fas fa-star";
@@ -19,10 +20,9 @@ function executeRating(stars) {
 }
 executeRating(ratingStars);
 
-
-const moreInfoBtn = document.getElementById("myButton")
-const comment = document.querySelector(".commentInput")
-moreInfoBtn.addEventListener("click", resetInput)
+const moreInfoBtn = document.getElementById("myButton");
+const comment = document.querySelector(".commentInput");
+moreInfoBtn.addEventListener("click", resetInput);
 const resetInput = () => {
   comment.reset();
-} 
+};
