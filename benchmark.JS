@@ -158,7 +158,7 @@ function handleQuestionsOptions(e) {
     input.name = "answer"; //assegno il tipo di imput
     //assegno all'imput listener per aggiungere all'array di risposte quella selezionata
     if (i < e.incorrect_answers.length) {
-      input.value = e.incorrect_answers[i]; //le domande errate avrano valore 0
+      input.value = e.incorrect_answers[i];
 
       label.innerText = e.incorrect_answers[i];
 
@@ -172,7 +172,7 @@ function handleQuestionsOptions(e) {
         showNextQuestion();
       });
     } else {
-      input.value = e.correct_answer; //le domande corrette avranno valore 1
+      input.value = e.correct_answer;
 
       label.innerText = e.correct_answer;
       let classLabelRadioCorr = e.correct_answers;
