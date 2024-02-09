@@ -139,8 +139,12 @@ function handleQuestionsOptions(e) {
   for (let i = 0; i < e.incorrect_answers.length + 1; i++) {
     let input = document.createElement("input");
     let label = document.createElement("label");
+    label.classList.add("labelAbsolute");
+    let divRadio = document.createElement("div");
+    divRadio.classList.add("divRadio");
     // let span = document.createElement("span");
     input.classList.add("options");
+    input.classList.add("inputRelative");
     // AGGIUNTO DA ME SPAN
     // input.type = "radio";
     //input radio originale
@@ -167,6 +171,7 @@ function handleQuestionsOptions(e) {
       label.htmlFor = classLabelRadioCorr;
       console.dir(label);
     }
+
     form.appendChild(input);
     form.appendChild(label);
   }
