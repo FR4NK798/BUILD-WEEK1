@@ -202,9 +202,9 @@ function removeImput() {
 // let arrGiuste = [];
 // let arrSbagliate = [];
 
-/* 
 
-FUNZIONE PER TIMER BENCHMARK
+
+/* FUNZIONE PER TIMER BENCHMARK
 
 let timerRef;
 function startTimer(){
@@ -232,3 +232,5 @@ function restartTimer(){
     startTimer()
 }
  */
+
+
