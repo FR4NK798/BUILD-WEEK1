@@ -125,13 +125,8 @@ function showNextQuestion() {
     // const sommaRisposteCorrette = risposteDate.reduce((accumulator, currentValue) => {
     //   return parseInt(accumulator) + parseInt(currentValue);
     // });
-    let sommaRisposteCorrette = 1;
-    for (let i = 0; i < risposteDate.length; i++) {
-      if (risposteDate[i] === questions[i].correct_answer) {
-        sommaRisposteCorrette++;
-        console.log(sommaRisposteCorrette);
-      }
-    }
+    let sommaRisposteCorrette = risposteDate.length;
+
     // arrGiuste.push(sommaRisposteCorrette * 10);
     // arrSbagliate.push((10 - sommaRisposteCorrette) * 10);
     let linkA = document.createElement("a");
@@ -145,7 +140,7 @@ function showNextQuestion() {
 
 showNextQuestion();
 
-/* buttonDomande.addEventListener("click", showNextQuestion); */
+// buttonDomande.addEventListener("click", showNextQuestion);
 
 function handleQuestionsOptions(e) {
   //gestisce il comportamento delle domande, aggiungendo imput e label in base a quante risposte ci sono
@@ -163,12 +158,6 @@ function handleQuestionsOptions(e) {
     //input radio originale
     input.type = "radio";
     input.name = "answer"; //assegno il tipo di imput
-    input.addEventListener("change", function (event) {
-      /* buttonDomande.removeAttribute("disabled"); */
-      risposteDate.push(event.target.value);
-      console.log(risposteDate);
-      showNextQuestion();
-    });
     //assegno all'imput listener per aggiungere all'array di risposte quella selezionata
     if (i < e.incorrect_answers.length) {
       input.value = e.incorrect_answers[i]; //le domande errate avrano valore 0
@@ -179,6 +168,11 @@ function handleQuestionsOptions(e) {
       input.id = classLabelRadioInc;
       label.htmlFor = classLabelRadioInc;
       console.dir(label);
+      input.addEventListener("change", function (event) {
+        buttonDomande.removeAttribute("disabled");
+
+        showNextQuestion();
+      });
     } else {
       input.value = e.correct_answer; //le domande corrette avranno valore 1
 
@@ -187,6 +181,11 @@ function handleQuestionsOptions(e) {
       input.id = classLabelRadioCorr;
       label.htmlFor = classLabelRadioCorr;
       console.dir(label);
+      input.addEventListener("change", function (event) {
+        buttonDomande.removeAttribute("disabled");
+        risposteDate.push(event.target.value);
+        showNextQuestion();
+      });
     }
 
     form.appendChild(input);
