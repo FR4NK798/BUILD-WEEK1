@@ -95,13 +95,13 @@ window.onload = () => {
   //ordina le domande secondo l'ordine appena dato
 };
 
-const buttonDomande = document.getElementById("randBtn");
+/* const buttonDomande = document.getElementById("randBtn"); */
 const questionBody = document.getElementById("questionBody");
 const DOMCounter = document.getElementById("questionNumber");
 const form = document.getElementById("form");
 
 function showNextQuestion() {
-  buttonDomande.disabled = true;
+  /* buttonDomande.disabled = true; */
   let questInnerText = null;
   const viola = document.querySelector("#questionNumber span");
   viola.innerText = "/10";
@@ -118,7 +118,7 @@ function showNextQuestion() {
     DOMCounter.innerText = questInnerText;
     DOMCounter.appendChild(viola);
   } else {
-    buttonDomande.hidden = true;
+    /* buttonDomande.hidden = true; */
     questionBody.innerText = "Finito!";
     removeImput();
     DOMCounter.innerText = "";
@@ -163,7 +163,7 @@ function handleQuestionsOptions(e) {
       label.htmlFor = classLabelRadioInc;
       console.dir(label);
       input.addEventListener("change", function (event) {
-        buttonDomande.removeAttribute("disabled");
+        /* buttonDomande.removeAttribute("disabled"); */
 
         showNextQuestion();
       });
@@ -176,7 +176,7 @@ function handleQuestionsOptions(e) {
       label.htmlFor = classLabelRadioCorr;
       console.dir(label);
       input.addEventListener("change", function (event) {
-        buttonDomande.removeAttribute("disabled");
+        /* buttonDomande.removeAttribute("disabled"); */
         risposteDate.push(event.target.value);
         showNextQuestion();
       });
